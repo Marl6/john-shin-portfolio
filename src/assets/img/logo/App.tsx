@@ -5,6 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { ConfigProvider, theme } from "antd";
+import Header from "../../../components/Header/Header";
 
 function App() {
   return (
@@ -18,10 +19,12 @@ function App() {
       }}
     >
       <Router basename="/john-shin-portfolio">
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
-        </Routes>
-
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" replace />} />
+          </Routes>
+        </main>
       </Router>
     </ConfigProvider>
   );
