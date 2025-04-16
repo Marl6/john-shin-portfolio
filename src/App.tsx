@@ -5,7 +5,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import { ConfigProvider, theme } from "antd";
-import Header from "../../../components/Header/Header";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     >
       <Router basename="/john-shin-portfolio">
         <Header />
+        <Home />
         <main className="container mx-auto px-4 py-8">
           <Routes>
             <Route path="/" element={<Navigate to="/home" replace />} />
