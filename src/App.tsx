@@ -8,6 +8,7 @@ import {
 import { ConfigProvider, theme } from "antd";
 import { useEffect } from "react";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Movie from "./pages/Movie/Movie";
@@ -54,6 +55,7 @@ function AppContent() {
         </Routes>
         <ScrollToSection />
       </main>
+      <Footer />
     </div>
   );
 }
