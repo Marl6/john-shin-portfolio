@@ -7,6 +7,13 @@ import {
 import { ConfigProvider, theme } from "antd";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Movie from "./pages/Movie/Movie";
+import Book from "./pages/Book/Book";
+import Event from "./pages/Event/Event";
+import JSTV from "./pages/JSTV/JSTV";
+import BookMe from "./pages/BookMe/BookMe";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -20,13 +27,22 @@ function App() {
       }}
     >
       <Router basename="/john-shin-portfolio">
-        <Header />
-        <Home />
-        <main className="container mx-auto px-4 py-8">
-          <Routes>
-            <Route path="/" element={<Navigate to="/home" replace />} />
-          </Routes>
-        </main>
+        <div className="relative">
+          <Header />
+          <main className="w-full">
+            <Home />
+            <About />
+            <Movie />
+            <Book />
+            <Event />
+            <JSTV />
+            <BookMe />
+            <Contact />
+            <Routes>
+              <Route path="/" element={<Navigate to="/home" replace />} />
+            </Routes>
+          </main>
+        </div>
       </Router>
     </ConfigProvider>
   );
