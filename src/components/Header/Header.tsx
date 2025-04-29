@@ -1,46 +1,72 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useMemo } from 'react';
+import { Menu } from 'antd';
+import { Link } from 'react-scroll';
 import logo from "../../assets/img/logo/john-shin-logo-resized2.png";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState('home');
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const navItems = useMemo(() => [
+    { name: 'HOME', key: 'home' },
+    { name: 'ABOUT', key: 'about' },
+    { name: 'MOVIE', key: 'movie' },
+    { name: 'MY BOOK', key: 'my-book' },
+    { name: 'EVENT', key: 'event' },
+    { name: 'JSTV', key: 'jstv' },
+    { name: 'BOOK ME', key: 'bookme' },
+    { name: 'CONTACT', key: 'contact' },
+  ], []);
 
-  const navItems = [
-    { name: 'HOME', path: '/home' },
-    { name: 'ABOUT', path: '/about' },
-    { name: 'MOVIE', path: '/movie' },
-    { name: 'MY BOOK', path: '/my-book' },
-    { name: 'EVENT', path: '/event' },
-    { name: 'JSTV', path: '/jstv' },
-    { name: 'BOOK ME', path: '/bookme' },
-    { name: 'CONTACT', path: '/contact' },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => document.getElementById(item.key));
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+
+      sections.forEach((section) => {
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionBottom = sectionTop + section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            setActiveSection(section.id);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [navItems]);
 
   return (
-    <nav className="bg-black text-white shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo/Brand */}    
-          <div className="flex-shrink-0 font-bold text-xl">
-            <img src={logo} alt="John Shin Logo" className="w-14 cursor-pointer" onClick={() => navigate('/home')}  />
+          <div className="flex-shrink-0">
+            <Link to="home" smooth={true} duration={500} offset={-100}>
+              <img src={logo} alt="John Shin Logo" className="w-14 cursor-pointer" />
+            </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-4">
+            <div className="flex space-x-4">
               {navItems.map((item) => (
                 <Link
-                  key={item.name}
-                  to={item.path}
-                  className="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ease-in-out hover:text-[#d14b5b]"
+                  key={item.key}
+                  to={item.key}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  offset={-100}
+                  className={`cursor-pointer px-3 py-2 text-sm font-medium transition-colors relative
+                    ${activeSection === item.key ? 'text-[#ef7e45]' : 'text-black hover:text-[#ef7e45]'}`}
+                  onClick={() => setActiveSection(item.key)}
                 >
                   {item.name}
+                  <div
+                    className={`absolute bottom-0 left-0 w-full h-0.5 transform origin-bottom transition-transform duration-300
+                      ${activeSection === item.key ? 'bg-[#ef7e45] scale-x-100' : 'bg-[#ef7e45] scale-x-0 group-hover:scale-x-100'}`}
+                  />
                 </Link>
               ))}
             </div>
@@ -48,68 +74,29 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-[#d14b5b] focus:outline-none"
-              aria-expanded="false"
+            <Menu
+              mode="vertical"
+              className="bg-white"
+              selectedKeys={[activeSection]}
             >
-              <span className="sr-only">Open main menu</span>
-              {!isMenuOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              )}
-            </button>
+              {navItems.map((item) => (
+                <Menu.Item key={item.key}>
+                  <Link
+                    to={item.key}
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    onClick={() => setActiveSection(item.key)}
+                  >
+                    {item.name}
+                  </Link>
+                </Menu.Item>
+              ))}
+            </Menu>
           </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className="block px-3 py-2 rounded-md text-base font-medium hover:text-[#d14b5b]"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
 };
