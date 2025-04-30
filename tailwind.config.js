@@ -19,11 +19,22 @@ export default {
         }
       },
       fontFamily: {
-        sueEllen: ['"Sue Ellen Francisco"', 'cursive'], // Corrected font name with quotes
+        sueEllen: ['"Sue Ellen Francisco"', 'cursive'], 
+        lora: ["Lora", "serif"],
         jacques: ['Jacques François Shadow', 'serif'],
         inter: ['Inter', 'sans-serif'],
         sans: ['Poppins', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: 'translateX(-50%)',
+          },
+        },
+      },
+      animation: {
+        scroll: 'scroll var(--animation-duration, 20s) linear infinite var(--animation-direction, forwards)',
       },
     },
   },
