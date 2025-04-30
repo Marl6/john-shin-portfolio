@@ -6,6 +6,7 @@ import {
   TwitterOutlined,
 } from "@ant-design/icons";
 import johnshin from "../../assets/img/johnshin/mainimage.png";
+import Featured from "../Featured/Featured";
 
 const { Text, Paragraph } = Typography;
 
@@ -13,9 +14,17 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-white w-full pt-20"
+      className="min-h-screen flex items-center bg-white w-full pt-5"
     >
       <div className="container mx-auto px-8">
+        <Row className="mb-10">
+          <Text className="text-2xl font-lora font-semibold text-center">
+            <span className="text-[#ef7e45]">Featured</span>{" "}
+            <span className="text-black">In</span>
+          </Text>
+
+          <Featured />
+        </Row>
         <Row gutter={[32, 32]} align="middle">
           <Col xs={24} md={12} className="flex justify-center">
             <div className="relative">
