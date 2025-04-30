@@ -6,6 +6,7 @@ import {
   TwitterOutlined,
 } from "@ant-design/icons";
 import johnshin from "../../assets/img/johnshin/mainimage.png";
+import Featured from "../Featured/Featured";
 
 const { Text, Paragraph } = Typography;
 
@@ -13,9 +14,17 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-white w-full pt-20"
+      className="min-h-screen flex items-center bg-white w-full pt-5"
     >
       <div className="container mx-auto px-8">
+        <Row className="mb-10">
+          <Text className="text-2xl font-lora font-semibold text-center">
+            <span className="text-[#ef7e45]">Featured</span>{" "}
+            <span className="text-black">In</span>
+          </Text>
+
+          <Featured />
+        </Row>
         <Row gutter={[32, 32]} align="middle">
           <Col xs={24} md={12} className="flex justify-center">
             <div className="relative">
@@ -74,6 +83,12 @@ const Home: React.FC = () => {
               <div className="pt-3 flex justify-center ml-10">
                 <button
                   type="button"
+                  onClick={() => {
+                    const element = document.getElementById("bookme");
+                    if (element) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
                   className="bg-[slate-800] no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block"
                 >
                   <span className="absolute inset-0 overflow-hidden rounded-full">

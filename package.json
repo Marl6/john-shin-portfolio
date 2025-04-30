@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.31.0",
     "@types/react-scroll": "^1.8.10",
     "antd": "^5.14.1",
     "clsx": "^2.1.1",
