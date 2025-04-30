@@ -25,6 +25,7 @@ export default {
         inter: ['Inter', 'sans-serif'],
         sans: ['Poppins', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
+        Baskerville: ['Libre Baskerville', 'serif']
       },
       keyframes: {
         scroll: {

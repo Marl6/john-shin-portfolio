@@ -62,7 +62,7 @@ const Featured: React.FC = () => {
             <img
               src={logo}
               alt={`Logo ${index + 1}`}
-              className="h-16 w-full object-contain"
+              className="h-20 w-full object-contain"
             />
           </div>
         ))}
