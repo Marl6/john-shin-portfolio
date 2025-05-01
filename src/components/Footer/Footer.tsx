@@ -11,7 +11,7 @@ const { Footer: AntFooter } = Layout;
 const { Text, Title } = Typography;
 
 const Footer: React.FC = () => (
-  <AntFooter className="bg-black py-8 mt-12">
+  <AntFooter className="bg-black py-8">
     <div className="container mx-auto px-8">
       <Row align="middle" justify="space-between">
         <Col xs={24} md={12} className="text-center md:text-left mb-4 md:mb-0">

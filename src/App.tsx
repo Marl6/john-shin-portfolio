@@ -5,7 +5,7 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-import { ConfigProvider, theme } from "antd";
+import { ConfigProvider, Divider, theme } from "antd";
 import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
