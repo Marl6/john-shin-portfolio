@@ -1,5 +1,10 @@
 import React from "react";
 import { Row, Col, Typography, Card } from "antd";
+import {
+  FacebookOutlined,
+  InstagramOutlined,
+  TwitterOutlined,
+} from "@ant-design/icons";
 
 const { Text } = Typography;
 
@@ -12,13 +17,54 @@ const Contact: React.FC = () => {
             <span className="text-[#ef7e45]">Contact</span> Me
           </Text>
         </Row>{" "}
-        <Row gutter={[32, 32]}>
-          <Col xs={24} md={16} className="mx-auto">
+        <Row gutter={[32, 32]} className="mt-14">
+          <Col xs={24} md={12} className="text-center mt-10">
+            <Text className="text-black text-xl font-bold font-Baskerville block">
+              Follow me on my Social Medias!
+            </Text>
+
+            <Row justify="center" gutter={[16, 16]} className="mt-4">
+              <Col>
+                <a
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
+                  title="Facebook"
+                >
+                  <FacebookOutlined />
+                </a>
+              </Col>
+              <Col>
+                <a
+                  href="https://instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
+                  title="Instagram"
+                >
+                  <InstagramOutlined />
+                </a>
+              </Col>
+              <Col>
+                <a
+                  href="https://twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
+                  title="Twitter"
+                >
+                  <TwitterOutlined />
+                </a>
+              </Col>
+            </Row>
+          </Col>
+          <Col xs={24} md={12}>
             <Card className="h-full bg-gray-50 p-6">
               <Text className="text-black font-lora text-lg text-center mb-4 block">
                 send a message!
               </Text>
-              {/* Add contact form */}
+
               <form className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700">

@@ -25,7 +25,7 @@ const Header = () => {
   );
 
   // Use the custom hook to track which section is in view
-  const activeSection = useActiveSection(sectionIds, 0.3);
+  const activeSection = useActiveSection(sectionIds, 0.09);
   console.log(activeSection);
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
