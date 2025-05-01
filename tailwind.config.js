@@ -37,6 +37,11 @@ export default {
       animation: {
         scroll: 'scroll var(--animation-duration, 20s) linear infinite var(--animation-direction, forwards)',
       },
+      extend: {
+          perspective: {
+            '1000': '1000px',
+          },
+      },
     },
   },
   plugins: [],
