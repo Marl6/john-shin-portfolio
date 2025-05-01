@@ -1,27 +1,104 @@
 import React from "react";
-import { Row, Col, Typography, Card } from "antd";
+import { Row, Col, Typography } from "antd";
 
-const { Title, Paragraph, Text } = Typography;
+const { Text } = Typography;
 
 const BookMe: React.FC = () => {
   return (
-    <section id="bookme" className="min-h-screen bg-white py-20 w-full">
-      <div className="container mx-auto px-8">
-        <Row>
-          <Text className="mx-auto text-3xl font-semibold mb-4 text-center text-black font-lora mt-5">
-            Book Me
+    <section
+      id="bookme"
+      className="relative min-h-screen bg-white w-full flex items-center justify-center"
+    >
+      {/* SVG Shape Divider at the top */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-0">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="w-full h-[120px] sm:h-[120px]"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,
+              172-41.86,82.39-16.72,168.19-17.73,
+              250.45-.39C823.78,31,906.67,72,
+              985.66,92.83c70.05,18.48,146.53,26.09,
+              214.34,3V0H0V27.35A600.21,600.21,
+              0,0,0,321.39,56.44Z"
+            className="fill-[#131213]"
+          />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-8 relative z-10">
+        <Row justify="center" align="middle">
+          <Text className="text-5xl font-semibold mb-4 text-center text-black font-lora">
+            <span className="text-[#ef7e45]">Hire</span> John To Speak!
           </Text>
-        </Row>{" "}
-        <Row gutter={[32, 32]}>
-          <Col xs={24} md={16} className="mx-auto">
-            <Card className="h-full">
-              <Title level={3}>Speaking Engagements</Title>
-              <Paragraph>
-                Interested in having John speak at your event? Fill out the form
-                below.
-              </Paragraph>
-              {/* Add booking form */}
-            </Card>
+        </Row>
+
+        <Row
+          gutter={[32, 32]}
+          className="mt-14"
+          justify="center"
+          align="middle"
+        >
+          <Col
+            xs={24}
+            md={12}
+            className="text-center flex flex-col justify-center h-full"
+          >
+            <Text className="text-5xl md:text-7xl lg:text-9xl font-bold text-[#ef7e45] mb-8">
+              Why you should book me?
+            </Text>
+          </Col>
+
+          {/* Preserved list structure */}
+          <Col xs={24} md={12} className="flex flex-col justify-center h-full">
+            <div className="flex flex-col items-center">
+              <ul className="space-y-4">
+                <li className="flex items-center">
+                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                    1
+                  </span>
+                  <Text className="text-lg text-black">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </Text>
+                </li>
+                <li className="flex items-center">
+                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                    2
+                  </span>
+                  <Text className="text-lg text-black">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </Text>
+                </li>
+                <li className="flex items-center">
+                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                    3
+                  </span>
+                  <Text className="text-lg text-black">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </Text>
+                </li>
+                <li className="flex items-center">
+                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                    4
+                  </span>
+                  <Text className="text-lg text-black">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </Text>
+                </li>
+                <li className="flex items-center">
+                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                    5
+                  </span>
+                  <Text className="text-lg text-black">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </Text>
+                </li>
+              </ul>
+            </div>
           </Col>
         </Row>
       </div>

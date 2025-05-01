@@ -8,8 +8,8 @@ const Contact: React.FC = () => {
     <section id="contact" className="min-h-screen bg-gray-50 py-20 w-full">
       <div className="container mx-auto px-8">
         <Row>
-          <Text className="mx-auto text-3xl font-semibold mb-4 text-center text-black font-lora mt-5">
-            Contact Me
+          <Text className="mx-auto text-5xl font-semibold mb-4 text-center text-black font-lora mt-10">
+            <span className="text-[#ef7e45]">Contact</span> Me
           </Text>
         </Row>{" "}
         <Row gutter={[32, 32]}>

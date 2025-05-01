@@ -8,10 +8,13 @@ const { Text } = Typography;
 
 const Movie: React.FC = () => {
   return (
-    <section id="movie" className="min-h-screen bg-white py-20 w-full">
+    <section
+      id="movie"
+      className="min-h-screen w-full py-20 bg-gradient-to-b from-white to-orange-200"
+    >
       <div className="container mx-auto px-8 mt-10">
         <Row>
-          <Text className="mx-auto text-3xl font-semibold mb-4 text-center text-black font-lora mt-5">
+          <Text className="mx-auto text-5xl font-semibold mb-4 text-center text-black font-lora mt-5">
             Think{" "}
             <span className="text-[#ef7e45] font-Baskerville italic">&</span>{" "}
             Grow Rich The Legacy Movie
