@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-white w-full pt-5"
+      className="min-h-screen flex items-center bg-white w-full"
     >
       <div className="container mx-auto px-8">
         <Row className="mb-10">
