@@ -1,11 +1,11 @@
 import React from "react";
 import { Row, Col, Typography, Space, Divider } from "antd";
 import {
-  FacebookOutlined,
+  FacebookOutlined, 
   InstagramOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
-import johnshin from "../../assets/img/johnshin/mainimage.png";
+import johnshin from "../../../src/assets/img/johnshin/mainimage.png"
 import Featured from "../Featured/Featured";
 
 const { Text, Paragraph } = Typography;
