@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Typography } from "antd";
+import { motion } from "framer-motion";
 
 const { Text } = Typography;
 
@@ -31,76 +32,134 @@ const BookMe: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-8 relative z-10">
-        <Row justify="center" align="middle">
-          <Text className="text-5xl font-semibold mb-4 text-center text-black font-lora">
-            <span className="text-[#ef7e45]">Hire</span> John To Speak!
-          </Text>
-        </Row>
-
-        <Row
-          gutter={[32, 32]}
-          className="mt-14"
-          justify="center"
-          align="middle"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          <Col
-            xs={24}
-            md={12}
-            className="text-center flex flex-col justify-center h-full"
-          >
-            <Text className="text-5xl md:text-7xl lg:text-9xl font-bold text-[#ef7e45] mb-8">
-              Why you should book me?
+          <Row justify="center" align="middle">
+            <Text className="text-5xl font-semibold mb-4 text-center text-black font-lora">
+              <span className="text-[#ef7e45]">Hire</span> John To Speak!
             </Text>
-          </Col>
+          </Row>
+        </motion.div>
 
-          {/* Preserved list structure */}
-          <Col xs={24} md={12} className="flex flex-col justify-center h-full">
-            <div className="flex flex-col items-center">
-              <ul className="space-y-4">
-                <li className="flex items-center">
-                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                    1
-                  </span>
-                  <Text className="text-lg text-black">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </Text>
-                </li>
-                <li className="flex items-center">
-                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                    2
-                  </span>
-                  <Text className="text-lg text-black">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </Text>
-                </li>
-                <li className="flex items-center">
-                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                    3
-                  </span>
-                  <Text className="text-lg text-black">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </Text>
-                </li>
-                <li className="flex items-center">
-                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                    4
-                  </span>
-                  <Text className="text-lg text-black">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </Text>
-                </li>
-                <li className="flex items-center">
-                  <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                    5
-                  </span>
-                  <Text className="text-lg text-black">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </Text>
-                </li>
-              </ul>
-            </div>
-          </Col>
-        </Row>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-14"
+        >
+          <Row
+            gutter={[32, 32]}
+            justify="center"
+            align="middle"
+          >
+            <Col
+              xs={24}
+              md={12}
+              className="text-center flex flex-col justify-center h-full"
+            >
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <Text className="text-5xl md:text-7xl lg:text-9xl font-bold text-[#ef7e45] mb-8">
+                  Why you should book me?
+                </Text>
+              </motion.div>
+            </Col>
+
+            {/* Preserved list structure */}
+            <Col xs={24} md={12} className="flex flex-col justify-center h-full">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex flex-col items-center">
+                  <ul className="space-y-4">
+                    <motion.li
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.5 }}
+                      viewport={{ once: true }}
+                      className="flex items-center"
+                    >
+                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                        1
+                      </span>
+                      <Text className="text-lg text-black">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </Text>
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.6 }}
+                      viewport={{ once: true }}
+                      className="flex items-center"
+                    >
+                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                        2
+                      </span>
+                      <Text className="text-lg text-black">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </Text>
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.7 }}
+                      viewport={{ once: true }}
+                      className="flex items-center"
+                    >
+                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                        3
+                      </span>
+                      <Text className="text-lg text-black">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </Text>
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.8 }}
+                      viewport={{ once: true }}
+                      className="flex items-center"
+                    >
+                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                        4
+                      </span>
+                      <Text className="text-lg text-black">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </Text>
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.9 }}
+                      viewport={{ once: true }}
+                      className="flex items-center"
+                    >
+                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
+                        5
+                      </span>
+                      <Text className="text-lg text-black">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </Text>
+                    </motion.li>
+                  </ul>
+                </div>
+              </motion.div>
+            </Col>
+          </Row>
+        </motion.div>
       </div>
     </section>
   );

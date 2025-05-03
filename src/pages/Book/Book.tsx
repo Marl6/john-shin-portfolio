@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Typography } from "antd";
 import Book1 from "../../../src/assets/img/book/book.png";
 import { BookContributors } from "../../components/ui/book-contributors";
+import { motion } from "framer-motion";
 
 const { Text } = Typography;
 
@@ -29,61 +30,100 @@ const Book: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-8">
-        <Row>
-          <Text className="mx-auto text-5xl font-semibold mb-4 text-center text-black font-lora mt-10">
-            <span className="text-[#ef7e45]">My</span> Books
-          </Text>
-        </Row>
-        <Row gutter={[32, 32]} className="mt-14">
-          <Col xs={24} md={12} className="text-center">
-            <Row>
-              <Text className="text-black text-3xl font-bold font-lora mx-auto">
-                How Rich Asians Think
-              </Text>
-            </Row>
-            <Row className="mt-10">
-              <Text className="text-black text-lg font-lora mx-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </Text>
-              <Text className="text-black text-lg font-lora mx-auto mt-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Text>
-              <Text className="text-black text-lg font-lora mx-auto mt-5">
-                * Endorsed by the Napoleon Hill Foundation
-              </Text>
-            </Row>
-          </Col>
-
-          {/* Book 2 */}
-          <Col xs={24} md={12}>
-            <Row className="mx-auto">
-              <div className="relative mx-auto">
-                <img
-                  src={Book1}
-                  alt="Book1"
-                  className="rounded-lg max-w-[400px] max-h-[450px] w-full h-auto mx-auto"
-                />
-              </div>
-            </Row>
-          </Col>
-        </Row>
-        <Row gutter={[32, 32]} className="mt-10">
-          <Col xs={24} md={24} className="text-center">
-            <Text className="text-black text-xl font-bold font-lora">
-              Book Contributors:
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <Row>
+            <Text className="mx-auto text-5xl font-semibold mb-4 text-center text-black font-lora mt-10">
+              <span className="text-[#ef7e45]">My</span> Books
             </Text>
-          </Col>
-          <Col xs={24} md={24} className="text-center">
-            <BookContributors />
-          </Col>
-        </Row>
+          </Row>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-14"
+        >
+          <Row gutter={[32, 32]}>
+            <Col xs={24} md={12} className="text-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <Row>
+                  <Text className="text-black text-3xl font-bold font-lora mx-auto">
+                    How Rich Asians Think
+                  </Text>
+                </Row>
+                <Row className="mt-10">
+                  <Text className="text-black text-lg font-lora mx-auto">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                    sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </Text>
+                  <Text className="text-black text-lg font-lora mx-auto mt-5">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </Text>
+                  <Text className="text-black text-lg font-lora mx-auto mt-5">
+                    * Endorsed by the Napoleon Hill Foundation
+                  </Text>
+                </Row>
+              </motion.div>
+            </Col>
+
+            {/* Book 2 */}
+            <Col xs={24} md={12}>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <Row className="mx-auto">
+                  <div className="relative mx-auto">
+                    <img
+                      src={Book1}
+                      alt="Book1"
+                      className="rounded-lg max-w-[400px] max-h-[450px] w-full h-auto mx-auto"
+                    />
+                  </div>
+                </Row>
+              </motion.div>
+            </Col>
+          </Row>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-10"
+          >
+            <Row gutter={[32, 32]}>
+              <Col xs={24} md={24} className="text-center">
+                <Text className="text-black text-xl font-bold font-lora">
+                  Book Contributors:
+                </Text>
+              </Col>
+              <Col xs={24} md={24} className="text-center">
+                <BookContributors />
+              </Col>
+            </Row>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import movieBanner from "../../../src/assets/img/movie/Movie.png";
 import { Col, Row, Typography } from "antd";
 import { IoCartOutline } from "react-icons/io5";
 import { Contributors } from "../../components/ui/contributors";
+import { motion } from "framer-motion";
 
 const { Text } = Typography;
 
@@ -13,23 +14,50 @@ const Movie: React.FC = () => {
       className="min-h-screen w-full py-20 bg-gradient-to-b from-white to-orange-200"
     >
       <div className="container mx-auto px-8 mt-10">
-        <Row>
-          <Text className="mx-auto text-5xl font-semibold mb-4 text-center text-black font-lora mt-5">
-            Think{" "}
-            <span className="text-[#ef7e45] font-Baskerville italic">&</span>{" "}
-            Grow Rich The Legacy Movie
-          </Text>
-        </Row>{" "}
-        <Row className="relative w-full h-[60vh] mt-5">
-          <Col className="flex items-center justify-center ml-10">
-            <img
-              src={movieBanner}
-              alt="Think & Grow Rich Movie"
-              className="max-w-full max-h-full object-contain"
-            />
-          </Col>
-        </Row>
-        <Row className="flex justify-center items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <Row>
+            <Text className="mx-auto text-5xl font-semibold mb-4 text-center text-black font-lora mt-5">
+              Think{" "}
+              <span className="text-[#ef7e45] font-Baskerville italic">&</span>{" "}
+              Grow Rich The Legacy Movie
+            </Text>
+          </Row>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-5"
+        >
+          <Row className="relative w-full h-[60vh]">
+            <Col className="flex items-center justify-center ml-10">
+              <motion.img
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                src={movieBanner}
+                alt="Think & Grow Rich Movie"
+                className="max-w-full max-h-full object-contain"
+              />
+            </Col>
+          </Row>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="flex justify-center items-center"
+        >
           <a
             href="https://vimeo.com/ondemand/tgrlegacymovie"
             target="_blank"
@@ -39,13 +67,22 @@ const Movie: React.FC = () => {
             <IoCartOutline className="text-2xl mr-2" />
             Get Your Copy Now!
           </a>
-        </Row>
-        <Row>
-          <Text className="mx-auto text-3xl font-semibold mb-4 text-center text-black font-lora mt-20">
-            TGR The Legacy Contributors
-          </Text>
-          <Contributors />
-        </Row>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <Row>
+            <Text className="mx-auto text-3xl font-semibold mb-4 text-center text-black font-lora">
+              TGR The Legacy Contributors
+            </Text>
+            <Contributors />
+          </Row>
+        </motion.div>
       </div>
     </section>
   );
