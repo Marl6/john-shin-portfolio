@@ -1,6 +1,11 @@
 import React from "react";
 import { Row, Col, Typography } from "antd";
 import { motion } from "framer-motion";
+import { JohnDescription1 } from "../../components/ui/BookMe/john-description1";
+import { JohnDescription2 } from "../../components/ui/BookMe/john-description2";
+import { JohnDescription3 } from "../../components/ui/BookMe/john-description3";
+import { JohnDescription4 } from "../../components/ui/BookMe/john-description4";
+import { JohnDescription5 } from "../../components/ui/BookMe/john-description5";
 
 const { Text } = Typography;
 
@@ -52,11 +57,7 @@ const BookMe: React.FC = () => {
           viewport={{ once: true }}
           className="mt-14"
         >
-          <Row
-            gutter={[32, 32]}
-            justify="center"
-            align="middle"
-          >
+          <Row gutter={[32, 32]} justify="center" align="middle">
             <Col
               xs={24}
               md={12}
@@ -75,14 +76,18 @@ const BookMe: React.FC = () => {
             </Col>
 
             {/* Preserved list structure */}
-            <Col xs={24} md={12} className="flex flex-col justify-center h-full">
+            <Col
+              xs={24}
+              md={12}
+              className="flex flex-col justify-center h-full"
+            >
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center mt-8">
                   <ul className="space-y-4">
                     <motion.li
                       initial={{ opacity: 0, y: 20 }}
@@ -95,7 +100,7 @@ const BookMe: React.FC = () => {
                         1
                       </span>
                       <Text className="text-lg text-black">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <JohnDescription1 />
                       </Text>
                     </motion.li>
                     <motion.li
@@ -109,7 +114,7 @@ const BookMe: React.FC = () => {
                         2
                       </span>
                       <Text className="text-lg text-black">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <JohnDescription2 />
                       </Text>
                     </motion.li>
                     <motion.li
@@ -123,7 +128,7 @@ const BookMe: React.FC = () => {
                         3
                       </span>
                       <Text className="text-lg text-black">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <JohnDescription3 />
                       </Text>
                     </motion.li>
                     <motion.li
@@ -137,7 +142,7 @@ const BookMe: React.FC = () => {
                         4
                       </span>
                       <Text className="text-lg text-black">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <JohnDescription4 />
                       </Text>
                     </motion.li>
                     <motion.li
@@ -151,7 +156,7 @@ const BookMe: React.FC = () => {
                         5
                       </span>
                       <Text className="text-lg text-black">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <JohnDescription5 />
                       </Text>
                     </motion.li>
                   </ul>
