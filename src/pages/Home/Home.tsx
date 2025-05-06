@@ -15,7 +15,7 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-white w-full"
+      className="min-h-screen flex items-center bg-white w-full relative overflow-hidden"
     >
       <div className="container mx-auto px-8">
         <Row className="mb-10">

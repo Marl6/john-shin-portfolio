@@ -3,6 +3,7 @@ import { Row, Col, Typography } from "antd";
 import Book1 from "../../../src/assets/img/book/book.png";
 import { BookContributors } from "../../components/ui/book-contributors";
 import { motion } from "framer-motion";
+import { EndorsedBy } from "../../components/ui/endorsed-by";
 
 const { Text } = Typography;
 
@@ -65,17 +66,19 @@ const Book: React.FC = () => {
                 </Row>
                 <Row className="mt-10">
                   <Text className="text-black text-lg font-lora mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                    sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
                   </Text>
                   <Text className="text-black text-lg font-lora mx-auto mt-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
                   </Text>
                   <Text className="text-black text-lg font-lora mx-auto mt-5">
                     * Endorsed by the Napoleon Hill Foundation
