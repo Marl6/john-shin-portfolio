@@ -1,4 +1,5 @@
 import { PinContainer } from "./3d-pin";
+import napoleonfoundation from "../../../assets/img/logo/napoleonhillfoundation.jpg";
 
 export function EndorsedBy() {
   return (
@@ -13,7 +14,11 @@ export function EndorsedBy() {
               Napoleon Hill Foundation
             </span>
           </div>
-          <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
+          <img
+            src={napoleonfoundation}
+            alt="Endorsement"
+            className="flex flex-1 w-full rounded-lg mt-4 object-cover h-32"
+          />
         </div>
       </PinContainer>
     </div>

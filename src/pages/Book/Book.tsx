@@ -4,6 +4,7 @@ import Book1 from "../../../src/assets/img/book/book.png";
 import { BookContributors } from "../../components/ui/Book/book-contributors";
 import { motion } from "framer-motion";
 import { EndorsedBy } from "../../components/ui/Book/endorsed-by";
+import { TestimonyExample } from "../../components/ui/Book/testimony";
 
 const { Text } = Typography;
 
@@ -81,7 +82,7 @@ const Book: React.FC = () => {
                     aliqua.
                   </Text>
                 </Row>
-                <Row className="mt-10">
+                <Row className="mt-14">
                   <EndorsedBy />
                 </Row>
               </motion.div>
@@ -96,13 +97,31 @@ const Book: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <Row className="mx-auto">
-                  <div className="relative mx-auto">
+                  <div className="relative mx-auto mt-10 ml-14">
                     <img
                       src={Book1}
                       alt="Book1"
-                      className="rounded-lg max-w-[400px] max-h-[450px] w-full h-auto mx-auto"
+                      className="rounded-lg max-w-[600px] max-h-[550px] w-full h-auto mx-auto"
                     />
                   </div>
+                </Row>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <Row className="mx-auto mt-10">
+                  <Col xs={24} md={24} className="text-center mt-12">
+                    <Text className="text-black text-2xl font-bold font-lora">
+                      Book Contributors:
+                    </Text>
+                  </Col>
+                  <Col xs={24} md={24} className="text-center mt-5">
+                    <BookContributors />
+                  </Col>
                 </Row>
               </motion.div>
             </Col>
@@ -116,13 +135,8 @@ const Book: React.FC = () => {
             className="mt-10"
           >
             <Row gutter={[32, 32]}>
-              <Col xs={24} md={24} className="text-center mt-12">
-                <Text className="text-black text-xl font-bold font-lora">
-                  Book Contributors:
-                </Text>
-              </Col>
               <Col xs={24} md={24} className="text-center">
-                <BookContributors />
+                <TestimonyExample />
               </Col>
             </Row>
           </motion.div>
