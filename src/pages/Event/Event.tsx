@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Typography } from "antd";
-import { UpcomingEvents } from "../../components/ui/upcoming-events";
+import { UpcomingEvents } from "../../components/ui/Event/upcoming-events";
 import { motion } from "framer-motion";
 
 const { Text } = Typography;

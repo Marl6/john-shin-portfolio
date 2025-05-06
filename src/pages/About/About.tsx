@@ -1,9 +1,9 @@
 import React from "react";
 import { Row, Col, Typography } from "antd";
-import { MovingCards } from "../../components/ui/moving-cards-demo";
-import { MainBanner } from "../../components/ui/main-banner";
-import { BusinessTimeline } from "../../components/ui/business-timeline";
-import { AboutWobbleCard } from "../../components/ui/about-me";
+import { MovingCards } from "../../components/ui/About/moving-cards-demo";
+import { MainBanner } from "../../components/ui/About/main-banner";
+import { BusinessTimeline } from "../../components/ui/About/business-timeline";
+import { AboutWobbleCard } from "../../components/ui/About/about-me";
 import { motion } from "framer-motion";
 
 const { Text } = Typography;

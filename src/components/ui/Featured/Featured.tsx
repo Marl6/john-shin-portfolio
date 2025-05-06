@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import logo1 from "../../assets/img/featured/forbes.png";
-import logo2 from "../../assets/img/featured/forbes.png";
-import logo3 from "../../assets/img/featured/forbes.png";
-import logo4 from "../../assets/img/featured/forbes.png";
-import logo5 from "../../assets/img/featured/forbes.png";
-import logo6 from "../../assets/img/featured/losangelestimes.png";
-import logo7 from "../../assets/img/featured/losangelestimes.png";
-import logo8 from "../../assets/img/featured/losangelestimes.png";
-import logo9 from "../../assets/img/featured/losangelestimes.png";
-import logo10 from "../../assets/img/featured/losangelestimes.png";
+import logo1 from "../../../assets/img/featured/forbes.png";
+import logo2 from "../../../assets/img/featured/forbes.png";
+import logo3 from "../../../assets/img/featured/forbes.png";
+import logo4 from "../../../assets/img/featured/forbes.png";
+import logo5 from "../../../assets/img/featured/forbes.png";
+
+import logo6 from "../../../assets/img/featured/losangelestimes.png";
+import logo7 from "../../../assets/img/featured/losangelestimes.png";
+import logo8 from "../../../assets/img/featured/losangelestimes.png";
+import logo9 from "../../../assets/img/featured/losangelestimes.png";
+import logo10 from "../../../assets/img/featured/losangelestimes.png";
 
 const logos = [
   logo1,

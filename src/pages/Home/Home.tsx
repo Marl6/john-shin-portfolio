@@ -7,7 +7,7 @@ import {
 } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import johnshin from "../../../src/assets/img/johnshin/mainimage.png";
-import Featured from "../Featured/Featured";
+import Featured from "../../components/ui/Featured/Featured";
 
 const { Text, Paragraph } = Typography;
 

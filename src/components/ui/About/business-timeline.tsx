@@ -1,4 +1,4 @@
-import { Timeline } from "../../components/ui/timeline";
+import { Timeline } from "./timeline";
 
 export function BusinessTimeline() {
   const data = [

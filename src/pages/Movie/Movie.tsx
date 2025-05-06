@@ -2,7 +2,7 @@ import React from "react";
 import movieBanner from "../../../src/assets/img/movie/Movie.png";
 import { Col, Row, Typography } from "antd";
 import { IoCartOutline } from "react-icons/io5";
-import { Contributors } from "../../components/ui/contributors";
+import { Contributors } from "../../components/ui/Movie/contributors";
 import { motion } from "framer-motion";
 
 const { Text } = Typography;

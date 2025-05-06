@@ -1,9 +1,9 @@
 import React from "react";
 import { Row, Col, Typography } from "antd";
 import Book1 from "../../../src/assets/img/book/book.png";
-import { BookContributors } from "../../components/ui/book-contributors";
+import { BookContributors } from "../../components/ui/Book/book-contributors";
 import { motion } from "framer-motion";
-import { EndorsedBy } from "../../components/ui/endorsed-by";
+import { EndorsedBy } from "../../components/ui/Book/endorsed-by";
 
 const { Text } = Typography;
 
@@ -80,9 +80,9 @@ const Book: React.FC = () => {
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
                   </Text>
-                  <Text className="text-black text-lg font-lora mx-auto mt-5">
-                    * Endorsed by the Napoleon Hill Foundation
-                  </Text>
+                </Row>
+                <Row className="mt-10">
+                  <EndorsedBy />
                 </Row>
               </motion.div>
             </Col>
@@ -116,7 +116,7 @@ const Book: React.FC = () => {
             className="mt-10"
           >
             <Row gutter={[32, 32]}>
-              <Col xs={24} md={24} className="text-center">
+              <Col xs={24} md={24} className="text-center mt-12">
                 <Text className="text-black text-xl font-bold font-lora">
                   Book Contributors:
                 </Text>

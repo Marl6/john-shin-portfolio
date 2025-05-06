@@ -1,4 +1,4 @@
-import { ContainerScroll } from "../ui/container-scroll-animation";
+import { ContainerScroll } from "./container-scroll-animation";
 
 export function YoutubeChannel() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "antd";
-import { JSTVParallax } from "../../components/ui/parallax-jstv";
+import { JSTVParallax } from "../../components/ui/JSTV/parallax-jstv";
 
 const JSTV: React.FC = () => {
   return (
