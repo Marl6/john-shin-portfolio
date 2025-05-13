@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     >
       <div className="container mx-auto px-8">
         <Row className="mb-10">
-          <Text className="text-2xl font-lora font-semibold text-center">
+          <Text className="text-3xl font-lora font-semibold text-center">
             <span className="text-[#ef7e45]">Featured</span>{" "}
             <span className="text-black">In</span>
           </Text>
@@ -32,7 +32,7 @@ const Home: React.FC = () => {
               <img
                 src={johnshin}
                 alt="John Shin"
-                className="rounded-lg max-w-full h-auto max-h-[70vh]"
+                className="rounded-lg max-w-full h-auto max-h-[70vh] filter   drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
               />
             </div>
           </Col>
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.2 }}
                   className="text-center"
                 >
-                  <Text className="text-4xl sm:text-5xl md:text-8xl font-bold mt-0 text-black ml-10 font-jacques">
+                  <Text className="text-4xl sm:text-5xl md:text-8xl font-bold mt-0 text-[#ef7e45] ml-10 font-jacques">
                     John C. Shin
                   </Text>
                 </motion.div>
@@ -138,7 +138,7 @@ const Home: React.FC = () => {
                     <span className="absolute inset-0 overflow-hidden rounded-full">
                       <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     </span>
-                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10">
+                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-3 ring-1 ring-white/10">
                       <span>Book me</span>
                       <svg
                         fill="none"
