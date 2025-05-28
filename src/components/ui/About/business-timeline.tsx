@@ -3,7 +3,8 @@ import { Timeline } from "./timeline";
 export function BusinessTimeline() {
   const data = [
     {
-      title: "2024",
+      year: "2024",
+      title: "Featured Thought Leader",
       content: (
         <div>
           <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
@@ -44,6 +45,7 @@ export function BusinessTimeline() {
       ),
     },
     {
+      year: "2024",
       title: "Early 2023",
       content: (
         <div>
@@ -89,6 +91,7 @@ export function BusinessTimeline() {
       ),
     },
     {
+      year: "2024",
       title: "Start of Journey",
       content: (
         <div>
