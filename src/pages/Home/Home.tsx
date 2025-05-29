@@ -170,13 +170,19 @@ const Home: React.FC = () => {
             md={12}
             className="flex justify-center md:justify-end order-1 md:order-2"
           >
-            <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
               <img
                 src={JohnShinNew}
                 alt="John Shin"
                 className="rounded-lg h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[75vh] object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)] ml-4 sm:ml-8 md:ml-20 lg:ml-20"
               />
-            </div>
+            </motion.div>
           </Col>
         </Row>
       </div>
