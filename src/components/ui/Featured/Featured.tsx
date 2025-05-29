@@ -59,11 +59,11 @@ const Featured: React.FC = () => {
         } hover:[animation-play-state:paused]`}
       >
         {logos.map((logo, index) => (
-          <div key={index} className="w-24 flex-shrink-0">
+          <div key={index} className="w-32 flex-shrink-0">
             <img
               src={logo}
               alt={`Logo ${index + 1}`}
-              className="h-20 w-full object-contain"
+              className="h-24 w-full object-contain"
             />
           </div>
         ))}

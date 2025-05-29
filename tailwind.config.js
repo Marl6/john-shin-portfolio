@@ -25,7 +25,8 @@ export default {
         inter: ['Inter', 'sans-serif'],
         sans: ['Poppins', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
-        Baskerville: ['Libre Baskerville', 'serif']
+        Baskerville: ['Libre Baskerville', 'serif'],
+        LeagueSpartan: ['League Spartan', 'sans-serif'],
       },
       keyframes: {
         scroll: {
