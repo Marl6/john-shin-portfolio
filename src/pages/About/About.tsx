@@ -11,7 +11,7 @@ const { Text } = Typography;
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="min-h-screen bg-gray-50 py-20 w-full">
+    <section id="about" className="min-h-screen bg-white py-20 w-full">
       <div className="container mx-auto px-8 mt-10">
         <Row className="min-h-screen flex flex-col justify-start pt-5">
           <motion.div
