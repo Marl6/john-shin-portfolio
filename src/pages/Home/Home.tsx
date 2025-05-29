@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >
-        <polygon points="0,-50 80,35 0,200" fill="white" />
+        <path d="M35,0 C150,30 50,70 0,150 L0,0" fill="white" />
       </svg>
       <div className="container mx-auto px-8 z-10">
         <Row className="md:mb-3 lg:mb-0 mt-24 md:mt-28">
