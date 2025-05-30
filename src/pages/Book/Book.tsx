@@ -1,10 +1,13 @@
 import React from "react";
-import { Row, Col, Typography } from "antd";
-import Book1 from "../../../src/assets/img/book/book.png";
-import { BookContributors } from "../../components/ui/Book/book-contributors";
+import { Row, Col, Typography, Divider } from "antd";
 import { motion } from "framer-motion";
-import { EndorsedBy } from "../../components/ui/Book/endorsed-by";
-import { TestimonyExample } from "../../components/ui/Book/testimony";
+import { ShoppingOutlined } from "@ant-design/icons";
+import bookPortrait from "../../../src/assets/img/book/book-portrait.png";
+import book from "../../../src/assets/img/book/book.png";
+import testimony from "../../../src/assets/img/book/testimony.png";
+import bookcontributor1 from "../../../src/assets/img/book/ROCK.png";
+import bookcontributor2 from "../../../src/assets/img/book/WANG.png";
+import bookcontributor3 from "../../../src/assets/img/book/aoki.png";
 
 const { Text } = Typography;
 
@@ -12,7 +15,7 @@ const Book: React.FC = () => {
   return (
     <section
       id="my-book"
-      className="min-h-screen bg-white py-20 w-full relative"
+      className="min-h-screen bg-white py-14 w-full relative"
     >
       {/* Top SVG Divider */}
       <div className="custom-shape-divider-top-1746093001 absolute top-0 left-0 w-full overflow-hidden leading-[0]">
@@ -31,116 +34,227 @@ const Book: React.FC = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Row>
-            <Text className="mx-auto text-5xl font-semibold mb-4 text-center text-black font-lora mt-10">
-              <span className="text-[#ef7e45]">My</span> Books
-            </Text>
-          </Row>
-        </motion.div>
+      <div className="container mx-auto px-8 mt-10">
+        <Row className="min-h-screen flex flex-col justify-start pt-5">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="w-full h-full"
+          >
+            <Row
+              gutter={[32, 32]}
+              className="flex items-stretch justify-center h-full"
+            >
+              <Col xs={24} md={8} className="flex flex-col h-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <Row className="flex-1 flex flex-col justify-start mt-28">
+                    <Text className="text-5xl font-bold text-[#ef7e45] text-start font-Arapey italic">
+                      HOW
+                    </Text>
+                    <Text className="text-6xl font-extrabold text-black font-LeagueSpartan text-center lg:-mt-1">
+                      RICH ASIANS
+                    </Text>
+                    <Text className="text-5xl font-bold text-[#ef7e45] font-Arapey text-end italic lg:-mt-3">
+                      THINK
+                    </Text>
+                  </Row>
+                </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-14"
-        >
-          <Row gutter={[32, 32]}>
-            <Col xs={24} md={12} className="text-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <Row>
-                  <Text className="text-black text-3xl font-bold font-lora mx-auto">
-                    How Rich Asians Think
-                  </Text>
-                </Row>
-                <Row className="mt-10">
-                  <Text className="text-black text-lg font-lora mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                  </Text>
-                  <Text className="text-black text-lg font-lora mx-auto mt-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </Text>
-                </Row>
-                <Row className="mt-14">
-                  <EndorsedBy />
-                </Row>
-              </motion.div>
-            </Col>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <Row className="flex-1 flex flex-col justify-start mt-14">
+                    <Text className="text-lg font-light text-black font-sans text-justify leading-6 [word-spacing:0.5em]">
+                      Think and Grow Rich has emerged as one of the most read
+                      self-help books of all time. Think and Grow Rich, by far,
+                      is Napoleon Hill’s most popular book. He summarizes his
+                      Philosophy of Success and explains it to the general
+                      public. Since the release of the book in 1937, countless
+                      millionaires and billionaires have used Napoleon’s work to
+                      achieve their success and lead a rich life. The book is a
+                      true work of art and radiates entrepreneurial spirit with
+                      intellectual thought.
+                    </Text>
+                  </Row>
+                </motion.div>
+              </Col>
 
-            {/* Book 2 */}
-            <Col xs={24} md={12}>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <Row className="mx-auto">
-                  <div className="relative mx-auto mt-10 ml-14">
-                    <img
-                      src={Book1}
-                      alt="Book1"
-                      className="rounded-lg max-w-[600px] max-h-[550px] w-full h-auto mx-auto"
-                    />
-                  </div>
-                </Row>
-              </motion.div>
+              <Col xs={24} md={8} className="flex flex-col h-full">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.7, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex-1 w-full h-full relative lg:min-h-[762px]"
+                >
+                  {/* Background image with opacity */}
+                  <div
+                    className="absolute inset-0 opacity-20 bg-cover bg-no-repeat bg-center"
+                    style={{
+                      backgroundImage: `url(${bookPortrait})`,
+                    }}
+                  ></div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <Row className="mx-auto mt-10">
-                  <Col xs={24} md={24} className="text-center mt-12">
-                    <Text className="text-black text-2xl font-bold font-lora">
-                      Book Contributors:
+                  <Row className="mt-14 w-4/5 mx-auto px-4 py-2 flex flex-col justify-center relative z-10 rounded-2xl bg-orange-400">
+                    <div className="flex items-center justify-center space-x-2">
+                      <ShoppingOutlined className="text-white text-xl mb-1" />
+                      <Text className="text-white text-center font-LeagueSpartan font-bold text-xl">
+                        GET YOUR COPY TODAY!
+                      </Text>
+                    </div>
+                  </Row>
+
+                  <Row className="flex-1 flex flex-col mt-28 ml-5">
+                    <div className="relative">
+                      <img
+                        src={book}
+                        alt="John Shin"
+                        className=" h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[32vh] object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
+                      />
+                    </div>
+                  </Row>
+
+                  <Row className="flex-1 flex flex-col justify-start mt-5">
+                    <Text className="text-xl font-bold text-black font-sans text-center">
+                      A publication of the Napoleon Hill Foundation & Think &
+                      Grow Rich
+                    </Text>
+                  </Row>
+                </motion.div>
+              </Col>
+
+              <Col xs={24} md={8} className="flex flex-col">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <Row className="flex-1 flex flex-row items-center justify-end">
+                    <Text className="mr-4 lg:text-7xl md:text-6xl text-5xl font-extrabold text-[#ef7e45] font-LeagueSpartan tracking-wide">
+                      MY
+                    </Text>
+                    <Text className="lg:text-7xl md:text-6xl text-5xl font-extrabold text-black font-LeagueSpartan tracking-wide">
+                      BOOK
+                    </Text>
+                    <Divider className="border-black border-[2px] flex-grow lg:-mt-1" />
+                  </Row>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <Row className="flex-1 flex flex-col justify-start mt-5">
+                    <Text className="text-lg font-normal text-black font-sans text-justify">
+                      Each chapter includes{" "}
+                      <span className="font-bold">ACTION STEPS</span> on how to
+                      effectively apply the principles of the book!
+                    </Text>
+                  </Row>
+                </motion.div>
+
+                <Row className="mt-8 w-full px-4">
+                  <Col className="px-6 w-full mx-auto py-7 bg-orange-400 rounded-2xl">
+                    <Text className="text-white text-justify font-LeagueSpartan font-normal text-xl">
+                      <span className="font-bold">Bill Walsh said</span> “ John
+                      is the real deal and brings the principles of TGR alive in
+                      a unique and impactful way”.
                     </Text>
                   </Col>
-                  <Col xs={24} md={24} className="text-center mt-5">
-                    <BookContributors />
+                  <Col className="mt-2">
+                    <Row>
+                      <Text className="text-black font-LeagueSpartan font-bold text-xl ml-24">
+                        Bill Walsh
+                      </Text>
+                      <Text className="text-black font-LeagueSpartan font-normal text-md ml-1">
+                        America’s Small Business Expert
+                      </Text>
+                    </Row>
+                    <Row>
+                      <div className="relative">
+                        <img
+                          src={testimony}
+                          alt="John Shin"
+                          className="lg:-mt-32 ml-40 h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover"
+                        />
+                      </div>
+                    </Row>
                   </Col>
                 </Row>
-              </motion.div>
-            </Col>
-          </Row>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="mt-10"
-          >
-            <Row gutter={[32, 32]}>
-              <Col xs={24} md={24} className="text-center">
-                <TestimonyExample />
+                <Row className="w-full justify-end">
+                  <Col>
+                    <Text className="text-black font-LeagueSpartan font-bold text-xl">
+                      BOOK CONTRIBUTORS INCLUDE:
+                    </Text>
+                  </Col>
+                  <Col span={24} className="mt-4">
+                    <Row gutter={[16, 16]} justify="space-between">
+                      <Col span={7} className="text-center flex flex-col">
+                        <Text className="uppercase text-black font-extrabold text-xl">
+                          THE
+                        </Text>
+                        <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
+                          ROCK
+                        </Text>
+                        <div className="flex items-center justify-center">
+                          <img
+                            src={bookcontributor1}
+                            alt="John Shin"
+                            className="lg: h-[10vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover mt-1.5 filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                          />
+                        </div>
+                      </Col>
+                      <Col span={7} className="text-center flex flex-col">
+                        <Text className="uppercase text-black font-extrabold text-xl">
+                          VERA
+                        </Text>
+                        <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
+                          WANG
+                        </Text>
+                        <div className="flex items-center justify-center">
+                          <img
+                            src={bookcontributor2}
+                            alt="John Shin"
+                            className="lg: h-[10vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                          />
+                        </div>
+                      </Col>
+                      <Col span={7} className="text-center flex flex-col">
+                        <Text className="uppercase text-black font-extrabold text-xl">
+                          STEVE
+                        </Text>
+                        <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
+                          AOKI
+                        </Text>
+                        <div className="flex items-center justify-center">
+                          <img
+                            src={bookcontributor3}
+                            alt="John Shin"
+                            className="lg: h-[10vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                          />
+                        </div>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </motion.div>
-        </motion.div>
+        </Row>
       </div>
     </section>
   );
