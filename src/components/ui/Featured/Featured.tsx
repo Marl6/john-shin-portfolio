@@ -1,15 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import logo1 from "../../../assets/img/featured/forbes.png";
-import logo2 from "../../../assets/img/featured/forbes.png";
-import logo3 from "../../../assets/img/featured/forbes.png";
-import logo4 from "../../../assets/img/featured/forbes.png";
-import logo5 from "../../../assets/img/featured/forbes.png";
-
-import logo6 from "../../../assets/img/featured/losangelestimes.png";
-import logo7 from "../../../assets/img/featured/losangelestimes.png";
-import logo8 from "../../../assets/img/featured/losangelestimes.png";
-import logo9 from "../../../assets/img/featured/losangelestimes.png";
-import logo10 from "../../../assets/img/featured/losangelestimes.png";
+import logo1 from "../../../assets/img/featured/1.png";
+import logo2 from "../../../assets/img/featured/2.png";
+import logo3 from "../../../assets/img/featured/3.png";
+import logo4 from "../../../assets/img/featured/4.png";
+import logo5 from "../../../assets/img/featured/5.png";
+import logo6 from "../../../assets/img/featured/6.png";
+import logo7 from "../../../assets/img/featured/7.png";
+import logo8 from "../../../assets/img/featured/8.png";
+import logo9 from "../../../assets/img/featured/9.png";
+import logo10 from "../../../assets/img/featured/10.png";
+import logo11 from "../../../assets/img/featured/11.png";
+import logo12 from "../../../assets/img/featured/12.png";
 
 const logos = [
   logo1,
@@ -22,6 +23,8 @@ const logos = [
   logo8,
   logo9,
   logo10,
+  logo11,
+  logo12,
 ];
 
 const Featured: React.FC = () => {
@@ -59,11 +62,11 @@ const Featured: React.FC = () => {
         } hover:[animation-play-state:paused]`}
       >
         {logos.map((logo, index) => (
-          <div key={index} className="w-24 flex-shrink-0">
+          <div key={index} className="w-36 flex-shrink-0">
             <img
               src={logo}
               alt={`Logo ${index + 1}`}
-              className="h-20 w-full object-contain"
+              className="h-28 w-full object-contain"
             />
           </div>
         ))}
