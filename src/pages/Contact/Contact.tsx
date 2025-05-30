@@ -11,7 +11,7 @@ const { Text } = Typography;
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="min-h-screen bg-gray-50 py-20 w-full">
+    <section id="contact" className="min-h-screen bg-white py-20 w-full">
       <div className="container mx-auto px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

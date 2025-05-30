@@ -12,7 +12,7 @@ const Book: React.FC = () => {
   return (
     <section
       id="my-book"
-      className="min-h-screen bg-gray-50 py-20 w-full relative"
+      className="min-h-screen bg-white py-20 w-full relative"
     >
       {/* Top SVG Divider */}
       <div className="custom-shape-divider-top-1746093001 absolute top-0 left-0 w-full overflow-hidden leading-[0]">
@@ -26,7 +26,7 @@ const Book: React.FC = () => {
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
             className="shape-fill"
-            fill="#ffdcac"
+            fill="#fed7aa"
           ></path>
         </svg>
       </div>
