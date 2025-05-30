@@ -35,7 +35,6 @@ const Movie: React.FC = () => {
             </Text>
           </Row>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -57,7 +56,6 @@ const Movie: React.FC = () => {
             </Col>
           </Row>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +73,6 @@ const Movie: React.FC = () => {
             Get Your Copy Now!
           </a>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,109 +95,208 @@ const Movie: React.FC = () => {
           gutter={[32, 32]}
           className="flex items-stretch justify-center h-full w-full mt-5"
         >
+          {/* First Column */}
           <Col xs={24} sm={12} md={6} className="mb-4">
-            <Row className=" orange-200 p-6 h-[75%] md:border-r-2 lg:md:border-r-2 border-black items-center justify-center">
-              <Col span={24} className="flex justify-center">
-                <img
-                  src={tgr1}
-                  alt="John Shin"
-                  className=" md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover"
-                />
-              </Col>
-              <Col span={24} className="flex flex-col items-center lg:-mt-40">
-                <Text className="uppercase text-black font-extrabold text-xl">
-                  CORCORAN
-                </Text>
-                <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
-                  BARBARA
-                </Text>
-              </Col>
-              <Col span={24} className="flex justify-center lg:-mt-28">
-                <img
-                  src={contributorLogo1}
-                  alt="John Shin"
-                  className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
-                />
-              </Col>
-            </Row>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="h-full"
+            >
+              <Row className="orange-200 p-6 h-[75%] md:border-r-2 lg:md:border-r-2 border-black items-center justify-center">
+                <Col span={24} className="flex justify-center">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    src={tgr1}
+                    alt="John Shin"
+                    className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover"
+                  />
+                </Col>
+                <Col span={24} className="flex flex-col items-center lg:-mt-40">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
+                  >
+                    <Text className="uppercase text-black font-extrabold text-xl">
+                      CORCORAN
+                    </Text>
+                    <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
+                      BARBARA
+                    </Text>
+                  </motion.div>
+                </Col>
+                <Col span={24} className="flex justify-center lg:-mt-28">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    src={contributorLogo1}
+                    alt="John Shin"
+                    className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                  />
+                </Col>
+              </Row>
+            </motion.div>
           </Col>
+
+          {/* Second Column */}
           <Col xs={24} sm={12} md={6} className="mb-4">
-            <Row className=" orange-200 p-6 h-[75%] md:border-r-2 lg:md:border-r-2 border-black items-center justify-center">
-              <Col span={24} className="flex justify-center">
-                <img
-                  src={tgr2}
-                  alt="John Shin"
-                  className=" md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover "
-                />
-              </Col>
-              <Col span={24} className="flex flex-col items-center lg:-mt-40">
-                <Text className="uppercase text-black font-extrabold text-xl">
-                  CARDONE
-                </Text>
-                <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
-                  GRANT
-                </Text>
-              </Col>
-              <Col span={24} className="flex justify-center lg:-mt-28">
-                <img
-                  src={contributorLogo2}
-                  alt="John Shin"
-                  className=" md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
-                />
-              </Col>
-            </Row>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="h-full"
+            >
+              <Row className="orange-200 p-6 h-[75%] md:border-r-2 lg:md:border-r-2 border-black items-center justify-center">
+                <Col span={24} className="flex justify-center">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    src={tgr2}
+                    alt="John Shin"
+                    className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover"
+                  />
+                </Col>
+                <Col span={24} className="flex flex-col items-center lg:-mt-40">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    <Text className="uppercase text-black font-extrabold text-xl">
+                      CARDONE
+                    </Text>
+                    <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
+                      GRANT
+                    </Text>
+                  </motion.div>
+                </Col>
+                <Col span={24} className="flex justify-center lg:-mt-28">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    src={contributorLogo2}
+                    alt="John Shin"
+                    className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                  />
+                </Col>
+              </Row>
+            </motion.div>
           </Col>
+
+          {/* Third Column */}
           <Col xs={24} sm={12} md={6} className="mb-4">
-            <Row className=" orange-200 p-6 h-[75%] md:border-r-2 lg:md:border-r-2 border-black items-center justify-center">
-              <Col span={24} className="flex justify-center mt-1">
-                <img
-                  src={tgr3}
-                  alt="John Shin"
-                  className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover"
-                />
-              </Col>
-              <Col span={24} className="flex flex-col items-center lg:-mt-40">
-                <Text className="uppercase text-black font-extrabold text-xl">
-                  HARDY
-                </Text>
-                <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
-                  DARREN
-                </Text>
-              </Col>
-              <Col span={24} className="flex justify-center lg:-mt-28">
-                <img
-                  src={contributorLogo3}
-                  alt="John Shin"
-                  className=" md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
-                />
-              </Col>
-            </Row>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="h-full"
+            >
+              <Row className="orange-200 p-6 h-[75%] md:border-r-2 lg:md:border-r-2 border-black items-center justify-center">
+                <Col span={24} className="flex justify-center mt-1">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    src={tgr3}
+                    alt="John Shin"
+                    className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover"
+                  />
+                </Col>
+                <Col span={24} className="flex flex-col items-center lg:-mt-40">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    viewport={{ once: true }}
+                  >
+                    <Text className="uppercase text-black font-extrabold text-xl">
+                      HARDY
+                    </Text>
+                    <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
+                      DARREN
+                    </Text>
+                  </motion.div>
+                </Col>
+                <Col span={24} className="flex justify-center lg:-mt-28">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    src={contributorLogo3}
+                    alt="John Shin"
+                    className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                  />
+                </Col>
+              </Row>
+            </motion.div>
           </Col>
+
+          {/* Fourth Column */}
           <Col xs={24} sm={12} md={6} className="mb-4">
-            <Row className=" orange-200 p-6 h-[75%] items-center justify-center">
-              <Col span={24} className="flex justify-center">
-                <img
-                  src={tgr4}
-                  alt="John Shin"
-                  className=" md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover"
-                />
-              </Col>
-              <Col span={24} className="flex flex-col items-center lg:-mt-40">
-                <Text className="uppercase text-black font-extrabold text-xl">
-                  HOWES
-                </Text>
-                <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
-                  LEWIS
-                </Text>
-              </Col>
-              <Col span={24} className="flex justify-center lg:-mt-28">
-                <img
-                  src={contributorLogo4}
-                  alt="John Shin"
-                  className=" md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
-                />
-              </Col>
-            </Row>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="h-full"
+            >
+              <Row className="orange-200 p-6 h-[75%] items-center justify-center">
+                <Col span={24} className="flex justify-center">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    src={tgr4}
+                    alt="John Shin"
+                    className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover"
+                  />
+                </Col>
+                <Col span={24} className="flex flex-col items-center lg:-mt-40">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <Text className="uppercase text-black font-extrabold text-xl">
+                      HOWES
+                    </Text>
+                    <Text className="text-[#ef7e45] uppercase font-bold text-lg md:-mt-2 lg:-mt-2">
+                      LEWIS
+                    </Text>
+                  </motion.div>
+                </Col>
+                <Col span={24} className="flex justify-center lg:-mt-28">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                    viewport={{ once: true }}
+                    src={contributorLogo4}
+                    alt="John Shin"
+                    className="md:-mt-28 lg:-mt-28 rounded-lg h-[50vh] sm:h-[20vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                  />
+                </Col>
+              </Row>
+            </motion.div>
           </Col>
         </Row>
       </div>

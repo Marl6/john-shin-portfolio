@@ -97,7 +97,6 @@ const Book: React.FC = () => {
                   viewport={{ once: true }}
                   className="flex-1 w-full h-full relative lg:min-h-[762px]"
                 >
-                  {/* Background image with opacity */}
                   <div
                     className="absolute inset-0 opacity-20 bg-cover bg-no-repeat bg-center"
                     style={{
@@ -105,24 +104,41 @@ const Book: React.FC = () => {
                     }}
                   ></div>
 
-                  <Row className="mt-14 w-4/5 mx-auto px-4 py-2 flex flex-col justify-center relative z-10 rounded-2xl bg-orange-400">
-                    <div className="flex items-center justify-center space-x-2">
-                      <ShoppingOutlined className="text-white text-xl mb-1" />
-                      <Text className="text-white text-center font-LeagueSpartan font-bold text-xl">
-                        GET YOUR COPY TODAY!
-                      </Text>
-                    </div>
-                  </Row>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Row className="mt-14 w-4/5 mx-auto px-4 py-2 flex flex-col justify-center relative z-10 rounded-2xl bg-orange-400">
+                      <div className="flex items-center justify-center space-x-2">
+                        <ShoppingOutlined className="text-white text-xl mb-1" />
+                        <Text className="text-white text-center font-LeagueSpartan font-bold text-xl">
+                          GET YOUR COPY TODAY!
+                        </Text>
+                      </div>
+                    </Row>
+                  </motion.div>
 
-                  <Row className="flex-1 flex flex-col mt-28 ml-5">
-                    <div className="relative">
-                      <img
-                        src={book}
-                        alt="John Shin"
-                        className=" h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[32vh] object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
-                      />
-                    </div>
-                  </Row>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    <Row className="flex-1 flex flex-col mt-28 ml-5">
+                      <div className="relative">
+                        <img
+                          src={book}
+                          alt="John Shin"
+                          className=" h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[32vh] object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
+                        />
+                      </div>
+                    </Row>
+                  </motion.div>
 
                   <Row className="flex-1 flex flex-col justify-start mt-5">
                     <Text className="text-xl font-bold text-black font-sans text-center">
