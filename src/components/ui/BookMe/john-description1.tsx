@@ -1,19 +1,22 @@
 import { FlipWords } from "./flip-words";
+import { Typography } from "antd";
+
+const { Text } = Typography;
 
 export function JohnDescription1() {
-  const words = [
-    "description1",
-    "description2",
-    "description3",
-    "description4",
-  ];
+  const words = ["speak boldly!", "inspire others!", "share knowledge!"];
 
   return (
-    <div className="h-[1rem] flex justify-center items-center px-4">
-      <div className="text-xl mx-auto font-normal text-neutral-600 dark:text-neutral-400 font-lora">
-        John is a
-        <FlipWords words={words} />
-        person
+    <div className="flex flex-col">
+      <Text className="lg:text-7xl md:text-6xl text-5xl font-extrabold text-black font-LeagueSpartan">
+        WATCH <br />
+        JOHN
+      </Text>
+      <div>
+        <FlipWords
+          words={words}
+          className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#ef7e45] uppercase"
+        />
       </div>
     </div>
   );

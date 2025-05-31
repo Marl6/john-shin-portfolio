@@ -2,11 +2,12 @@ import React from "react";
 import { Row, Col, Typography, Divider } from "antd";
 import { MovingCards } from "../../components/ui/About/moving-cards-demo";
 import { BusinessTimeline } from "../../components/ui/About/business-timeline";
-import { AboutWobbleCard } from "../../components/ui/About/about-me";
 import { motion } from "framer-motion";
-import johnShin from "../../assets/img/johnshin/ABOUTMEPIC.png";
+import johnShin from "../../assets/img/aboutme/aboutmejohn.png";
 import whoIsJohnShin from "../../assets/img/johnshin/WHOISJOHNSHIN.png";
 import logo from "../../assets/img/logo/john-shin-logo.png";
+import johnShin2 from "../../assets/img/aboutme/SHINBW.png";
+
 const { Text } = Typography;
 
 const About: React.FC = () => {
@@ -67,7 +68,7 @@ const About: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   <Row className="flex-1 flex flex-col justify-start mt-5">
-                    <Text className="text-md font-normal text-black font-sans text-justify">
+                    <Text className="text-md font-normal text-black font-sans text-justify leading-7">
                       Shin pursued higher education at the University of
                       Southern California, obtaining a B.A. in Business
                       Administration, an MBA, and a Juris Doctorate in Law.
@@ -79,26 +80,8 @@ const About: React.FC = () => {
                     </Text>
                   </Row>
                 </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <Row className="flex-1 flex flex-col -mt-6">
-                    <div className="relative">
-                      <img
-                        src={johnShin}
-                        alt="John Shin"
-                        className="rounded-lg h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[40vh] object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
-                      />
-                    </div>
-                  </Row>
-                </motion.div>
               </Col>
 
-              {/* Second column animations */}
               <Col xs={24} md={8} className="flex flex-col h-full">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -156,7 +139,7 @@ const About: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   <Row className="flex-1 flex flex-col justify-start mt-5">
-                    <Text className="text-md font-normal text-black font-sans text-justify">
+                    <Text className="text-md font-normal text-black font-sans text-justify leading-7">
                       John Shin is a serial entrepreneur, philanthropist, movie
                       producer, author, motivational speaker and critically
                       acclaimed business coach. He has started over 26 different
@@ -169,7 +152,6 @@ const About: React.FC = () => {
                 </motion.div>
               </Col>
 
-              {/* Third column animations */}
               <Col xs={24} md={8} className="flex flex-col">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -179,7 +161,7 @@ const About: React.FC = () => {
                 >
                   <Row gutter={[0, 16]} className="w-full">
                     <Col xs={24} md={16} order={1}>
-                      <Text className="text-md font-normal text-black font-sans text-justify">
+                      <Text className="text-md font-normal text-black font-sans text-justify leading-7">
                         John Shin is also the Executive Producer of the featured
                         film, "Think and Grow Rich: The Legacy," which is
                         sweeping the world in multiple countries and the
@@ -215,32 +197,14 @@ const About: React.FC = () => {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <Row className="flex-1 flex flex-col justify-start mt-5">
-                    <Text className="text-md font-normal text-black font-sans text-justify">
-                      John Shin continues his mission to inspire young
-                      entrepreneurs around the world. He captivates his audience
-                      by educating them with a sense of humor. He commands his
-                      audience with an exhilarating intensive energy that keeps
-                      people on the edge of their seats for 12 hours. <br />
-                      John Shin received his B.S. in Business Administration
-                      from the University of Southern California, an M.B.A., and
-                      a Juris Doctorate Degree in Law. Immediately after
-                      college, John was recruited to work at a Fortune 100
-                      company but soon learned that the corporate world was not
-                      for him. <br />
-                      John Shin was introduced to the financial services
-                      industry by his wife, Arlene, in 1994 and since then they
-                      have opened over 128 offices in 42 different states.
-                      <br /> John Shin knew that this would fit his
-                      entrepreneurial vision and mission to spread financial
-                      literacy. John Shin has mentored and trained hundreds of
-                      thousands of people nationwide to become successful
-                      business owners. In John Shin's own words, he says, "Show
-                      me your mentor, and I'll show you your future."
-                      <br /> John Shin has been featured in Wall Street Journal,
-                      Forbes Magazine and numerous Finance Magazines as well as
-                      CBS, NBC, Fox News, and MSNBC.
-                    </Text>
+                  <Row className="flex-1 flex flex-col">
+                    <div className="relative">
+                      <img
+                        src={johnShin2}
+                        alt="John Shin"
+                        className="lg:-mt-10 rounded-lg h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
+                      />
+                    </div>
                   </Row>
                 </motion.div>
               </Col>
@@ -248,19 +212,106 @@ const About: React.FC = () => {
           </motion.div>
         </Row>
 
-        <div className="space-y-20 mt-20">
+        <Row className="min-h-screen flex flex-col justify-center pt-5">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="mt-10"
+            viewport={{ once: true }}
+            className="w-full h-full"
           >
-            <Col span={24}>
-              <AboutWobbleCard />
-            </Col>
-          </motion.div>
+            <Row
+              gutter={[32, 32]}
+              className="flex items-stretch justify-center h-full"
+            >
+              <Col xs={24} md={16} className="flex flex-col h-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <Row className="flex-1 flex flex-col justify-start mt-5">
+                    <Text className="text-md font-normal text-black font-sans text-justify leading-7">
+                      <span className="font-bold">John Shin</span> continues his
+                      mission to inspire young entrepreneurs around the world.
+                      He captivates his audience by educating them with a sense
+                      of humor. He commands his audience with an exhilarating
+                      intensive energy that keeps people on the edge of their
+                      seats for 12 hours. <br /> John Shin received his B.S. in
+                      Business Administration from the University of Southern
+                      California, an M.B.A., and a Juris Doctorate Degree in
+                      Law. Immediately after college, John was recruited to work
+                      at a Fortune 100 company but soon learned that the
+                      corporate world was not for him. <br /> John Shin was
+                      introduced to the financial services industry by his wife,
+                      Arlene, in 1994 and since then they have opened over 128
+                      offices in 42 different states.
+                    </Text>
+                    <Text className="text-md font-normal text-black font-sans text-justify leading-7 mt-4">
+                      <span className="font-bold">John Shin</span> knew that
+                      this would fit his entrepreneurial vision and mission to
+                      spread financial literacy. John Shin has mentored and
+                      trained hundreds of thousands of people nationwide to
+                      become successful business owners. In John Shin’s own
+                      words, he says, <br />
+                      “Show me your mentor, and I’ll show you your future.” John
+                      Shin has been featured in Wall Street Journal, Forbes
+                      Magazine and numerous Finance Magazines as well as CBS,
+                      NBC, Fox News, and MSNBC.
+                    </Text>
+                  </Row>
+                </motion.div>
+              </Col>
 
+              <Col xs={24} md={8} className="flex flex-col">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="w-full flex justify-center"
+                >
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                    src={logo}
+                    alt="John Shin Logo"
+                    className="lg:-mt-5 md:mt-14 rounded-lg h-[15vh] sm:h-[15vh] md:h-[20vh] lg:h-[15vh] object-contain"
+                  />
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <Row className="flex-1 flex flex-col lg:-mt-10">
+                    <div className="relative flex items-center justify-center">
+                      <Text className="z-10 lg:-mr-28 text-8xl font-extrabold text-[#ef7e45] font-LeagueSpartan text-center leading-none">
+                        <span className="text-black ">JO</span>
+                        HN
+                      </Text>
+                      <div className="relative">
+                        <img
+                          src={johnShin}
+                          alt="John Shin"
+                          className="lg:-mt-5 rounded-lg h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[60vh] w-full object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
+                        />
+                        <div className="absolute inset-y-0 left-0 w-[30%] h-[80%] bg-white/50 rounded-l-lg" />
+                      </div>
+                    </div>
+                  </Row>
+                </motion.div>
+              </Col>
+            </Row>
+          </motion.div>
+        </Row>
+
+        <div className="lg:-mt-44">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -279,11 +330,13 @@ const About: React.FC = () => {
             viewport={{ once: true, amount: 0.2 }}
             className="mt-10"
           >
-            <Col span={24}>
-              <Text className="block text-2xl font-semibold mb-4 text-center text-black font-lora">
-                Testimonies
+            <Col span={24} className="flex flex-col items-center mt-14">
+              <Text className="text-5xl font-semibold mb-4 text-center text-black font-lora mt-5">
+                Testi<span className="text-[#ef7e45]">monies</span>
               </Text>
-              <MovingCards />
+              <div className="w-full flex justify-center">
+                <MovingCards />
+              </div>
             </Col>
           </motion.div>
         </div>

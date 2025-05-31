@@ -118,6 +118,7 @@ const Movie: React.FC = () => {
                 </Col>
                 <Col span={24} className="flex flex-col items-center lg:-mt-40">
                   <motion.div
+                    className="flex flex-col items-center"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
@@ -169,6 +170,7 @@ const Movie: React.FC = () => {
                 </Col>
                 <Col span={24} className="flex flex-col items-center lg:-mt-40">
                   <motion.div
+                    className="flex flex-col items-center"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
@@ -220,6 +222,7 @@ const Movie: React.FC = () => {
                 </Col>
                 <Col span={24} className="flex flex-col items-center lg:-mt-40">
                   <motion.div
+                    className="flex flex-col items-center"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
@@ -271,6 +274,7 @@ const Movie: React.FC = () => {
                 </Col>
                 <Col span={24} className="flex flex-col items-center lg:-mt-40">
                   <motion.div
+                    className="flex flex-col items-center"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
