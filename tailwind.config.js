@@ -27,6 +27,7 @@ export default {
         mono: ['Fira Code', 'monospace'],
         Baskerville: ['Libre Baskerville', 'serif'],
         LeagueSpartan: ['League Spartan', 'sans-serif'],
+        Arapey: ['Arapey', 'serif'],
       },
       keyframes: {
         scroll: {

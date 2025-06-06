@@ -1,27 +1,26 @@
 import { WobbleCard } from "./wobble-card";
+import thumbnail1 from "../../../assets/img/bookme/thumbnail1.png";
 
 export function AboutWobbleCard() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
       <WobbleCard
-        containerClassName="col-span-1 lg:col-span-2 h-full bg-orange-500 min-h-[500px] lg:min-h-[300px]"
+        containerClassName="col-span-1 lg:col-span-2 h-full bg-orange-500 min-h-[500px] lg:min-h-[300px] relative"
         className=""
       >
-        <div className="max-w-xs">
+        <div className="max-w-xs relative z-10">
           <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
             Lorem ipsum dolor sit amet.
           </h2>
-          <p className="mt-4 text-left  text-base/6 text-neutral-200">
+          <p className="mt-4 text-left text-base/6 text-neutral-200">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
         <img
-          src="/linear.webp"
-          width={500}
-          height={500}
-          alt="linear demo image"
-          className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
+          src={thumbnail1}
+          alt="John Shin"
+          className="absolute right-0 bottom-0 h-[90%] w-auto object-contain grayscale filter rounded-2xl"
         />
       </WobbleCard>
       <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-orange-600">

@@ -1,11 +1,8 @@
 import React from "react";
-import { Row, Col, Typography } from "antd";
+import { Row, Col, Typography, Divider } from "antd";
 import { motion } from "framer-motion";
 import { JohnDescription1 } from "../../components/ui/BookMe/john-description1";
-import { JohnDescription2 } from "../../components/ui/BookMe/john-description2";
-import { JohnDescription3 } from "../../components/ui/BookMe/john-description3";
-import { JohnDescription4 } from "../../components/ui/BookMe/john-description4";
-import { JohnDescription5 } from "../../components/ui/BookMe/john-description5";
+import bookme from "../../assets/img/bookme/bookmebg.png";
 
 const { Text } = Typography;
 
@@ -13,9 +10,11 @@ const BookMe: React.FC = () => {
   return (
     <section
       id="bookme"
-      className="relative min-h-screen bg-white w-full flex items-center justify-center"
+      className="relative min-h-screen w-full flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url(${bookme})`,
+      }}
     >
-      {/* SVG Shape Divider at the top */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-0">
         <svg
           data-name="Layer 1"
@@ -36,135 +35,87 @@ const BookMe: React.FC = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Row justify="center" align="middle">
-            <Text className="text-5xl font-semibold mb-4 text-center text-black font-lora">
-              <span className="text-[#ef7e45]">Hire</span> John To Speak!
-            </Text>
-          </Row>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-14"
-        >
-          <Row gutter={[32, 32]} justify="center" align="middle">
-            <Col
-              xs={24}
-              md={12}
-              className="text-center flex flex-col justify-center h-full"
+      <div className="container mx-auto px-8 mt-10">
+        <Row className="min-h-screen flex flex-col justify-start pt-5">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="w-full h-full"
+          >
+            <Row
+              gutter={[32, 32]}
+              className="flex items-stretch justify-center h-full"
             >
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <Text className="text-5xl md:text-7xl lg:text-9xl font-bold text-[#ef7e45] mb-8">
-                  Why you should book me?
-                </Text>
-              </motion.div>
-            </Col>
+              <Col xs={24} md={8} className="flex flex-col h-full">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <Row className="flex-1 flex flex-col justify-start mt-[8.5rem]">
+                    <JohnDescription1 />
+                  </Row>
+                </motion.div>
 
-            {/* Preserved list structure */}
-            <Col
-              xs={24}
-              md={12}
-              className="flex flex-col justify-center h-full"
-            >
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex flex-col items-center mt-8">
-                  <ul className="space-y-4">
-                    <motion.li
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.5 }}
-                      viewport={{ once: true }}
-                      className="flex items-center"
-                    >
-                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                        1
-                      </span>
-                      <Text className="text-lg text-black">
-                        <JohnDescription1 />
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="mt-14"
+                >
+                  <button className="p-[3px] relative" type="button">
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#ef7e45] to-orange-800 rounded-lg" />
+                    <div className="px-8 py-2  bg-[black] rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+                      <Text className="font-LeagueSpartan text-md font-bold tracking-widest">
+                        Book Now!
                       </Text>
-                    </motion.li>
-                    <motion.li
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.6 }}
-                      viewport={{ once: true }}
-                      className="flex items-center"
-                    >
-                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                        2
-                      </span>
-                      <Text className="text-lg text-black">
-                        <JohnDescription2 />
-                      </Text>
-                    </motion.li>
-                    <motion.li
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.7 }}
-                      viewport={{ once: true }}
-                      className="flex items-center"
-                    >
-                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                        3
-                      </span>
-                      <Text className="text-lg text-black">
-                        <JohnDescription3 />
-                      </Text>
-                    </motion.li>
-                    <motion.li
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.8 }}
-                      viewport={{ once: true }}
-                      className="flex items-center"
-                    >
-                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                        4
-                      </span>
-                      <Text className="text-lg text-black">
-                        <JohnDescription4 />
-                      </Text>
-                    </motion.li>
-                    <motion.li
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.9 }}
-                      viewport={{ once: true }}
-                      className="flex items-center"
-                    >
-                      <span className="w-8 h-8 rounded-full bg-[#ef7e45] flex items-center justify-center mr-4 text-white font-bold">
-                        5
-                      </span>
-                      <Text className="text-lg text-black">
-                        <JohnDescription5 />
-                      </Text>
-                    </motion.li>
-                  </ul>
-                </div>
-              </motion.div>
-            </Col>
-          </Row>
-        </motion.div>
+                    </div>
+                  </button>
+                </motion.div>
+              </Col>
+
+              <Col xs={24} md={8} className="flex flex-col h-full"></Col>
+
+              <Col xs={24} md={8} className="flex flex-col">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <Row className="flex-1 flex flex-row items-center justify-end mt-32">
+                    <Text className="mr-4 lg:text-7xl md:text-6xl text-5xl font-extrabold text-black font-LeagueSpartan">
+                      HIRE <br />
+                      <span className="text-[#ef7e45]">JOHN SHIN</span>
+                    </Text>
+                    <Text className="lg:text-7xl md:text-6xl text-5xl font-extrabold text-black font-LeagueSpartan">
+                      TO SPEAK!
+                    </Text>
+                    <Divider className="border-black border-[2px] flex-grow lg:-mt-1" />
+                  </Row>
+
+                  <Row className="flex-1 flex flex-col justify-start mt-14">
+                    <Text className="text-lg font-light text-black font-sans text-justify leading-6 [word-spacing:0.5em]">
+                      <span className="font-extrabold">John C. Shin</span> is
+                      one of the most sought after and dynamic speakers of the
+                      21st century. His success in life and business make him
+                      2nd to none in delivering an experience that is sure to
+                      captivate your audience and or corporation. John C. Shin
+                      is also a bestselling author, investor, philanthropist and
+                      success mentor! Don’t wait another minute or look anywhere
+                      else, John is ready to wow your crowd and leave them
+                      empowered and inspired!
+                    </Text>
+                  </Row>
+                </motion.div>
+              </Col>
+            </Row>
+          </motion.div>
+        </Row>
       </div>
     </section>
   );
