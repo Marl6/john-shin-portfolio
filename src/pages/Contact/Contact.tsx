@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="min-h-screen bg-orange-100 py-20 w-full">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-0">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
           className="mt-14"
         >
           <Row justify="center" className="w-full">
-            <Text className="text-[#ef7e45] font-extrabold text-[10rem] tracking-wider font-LeagueSpartan">
+            <Text className="text-[#ef7e45] font-extrabold md:text-[10rem] text-[5rem] tracking-wider font-LeagueSpartan text-center">
               CONTACT <span className="text-black">ME</span>
             </Text>
           </Row>
@@ -220,7 +220,7 @@ const Contact: React.FC = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4, type: "spring" }}
                   viewport={{ once: true }}
-                  className="absolute z-1 w-3/4 h-auto top-[35%] left-[55%] transform -translate-x-1/2 -translate-y-1/2"
+                  className="absolute z-1 w-3/4 h-auto md:top-[35%] md:left-[55%] top-[16%] left-[13%] transform -translate-x-1/2 -translate-y-1/2"
                 >
                   <motion.img
                     src={logo}
@@ -235,7 +235,7 @@ const Contact: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
                   viewport={{ once: true }}
-                  className="relative lg:-mt-64 lg:-ml-24 h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[80vh] ml-4 sm:ml-8 md:ml-20"
+                  className="relative lg:-mt-64 lg:-ml-24 h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[80vh] -ml-14 sm:ml-8 md:ml-20"
                 >
                   <motion.img
                     src={johnShin}

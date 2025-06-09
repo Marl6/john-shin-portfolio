@@ -32,7 +32,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto pt-20 px-4 md:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto md:pt-20 pt-10 px-0 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 font-extrabold text-black dark:text-white max-w-4xl">
           Shin's Journey
         </h2>
@@ -52,7 +52,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-black border border-neutral-300 p-2" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-3xl font-bold text-black">
+              <h3 className="hidden md:block text-xl md:pl-20 md:text-3xl font-bold text-black text-left">
                 <span className="text-4xl md:text-5xl break-normal text-[#ef7e45]">
                   {item.year}:
                 </span>{" "}
@@ -62,7 +62,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
+              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-black">
+                <span className="text-4xl md:text-5xl break-normal text-[#ef7e45]">
+                  {item.year}:
+                </span>{" "}
+                <br />
                 {item.title}
               </h3>
               {item.content}{" "}

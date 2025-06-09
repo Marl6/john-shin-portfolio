@@ -109,10 +109,19 @@ const Book: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Row className="mt-14 w-4/5 mx-auto px-4 py-2 flex flex-col justify-center relative z-10 rounded-2xl bg-orange-400">
+                    <Row
+                      className="mt-14 w-4/5 mx-auto px-4 py-2 flex flex-col justify-center relative z-10 rounded-2xl bg-orange-400 cursor-pointer hover:bg-orange-500 transition-colors"
+                      onClick={() =>
+                        window.open(
+                          "https://www.barnesandnoble.com/w/how-rich-asians-think-john-c-shin/1131290001",
+                          "_blank",
+                          "noopener,noreferrer"
+                        )
+                      }
+                    >
                       <div className="flex items-center justify-center space-x-2">
                         <ShoppingOutlined className="text-white text-xl mb-1" />
-                        <Text className="text-white text-center font-LeagueSpartan font-bold text-xl">
+                        <Text className="text-white text-center font-LeagueSpartan font-bold md:text-xl text-lg">
                           GET YOUR COPY TODAY!
                         </Text>
                       </div>
@@ -141,7 +150,7 @@ const Book: React.FC = () => {
                   </motion.div>
 
                   <Row className="flex-1 flex flex-col justify-start mt-5">
-                    <Text className="text-xl font-bold text-black font-sans text-center">
+                    <Text className="md:text-xl text-lg font-bold text-black font-sans text-center">
                       A publication of the Napoleon Hill Foundation & Think &
                       Grow Rich
                     </Text>
@@ -156,7 +165,7 @@ const Book: React.FC = () => {
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <Row className="flex-1 flex flex-row items-center justify-end">
+                  <Row className="flex-1 flex flex-row items-center justify-end mt-5 md:mt-0">
                     <Text className="mr-4 lg:text-7xl md:text-6xl text-5xl font-extrabold text-[#ef7e45] font-LeagueSpartan tracking-wide">
                       MY
                     </Text>
@@ -182,7 +191,7 @@ const Book: React.FC = () => {
                   </Row>
                 </motion.div>
 
-                <Row className="mt-8 w-full px-4">
+                <Row className="mt-8 w-full px-4 items-center md:items-start lg:items-start">
                   <Col className="px-6 w-full mx-auto py-7 bg-orange-400 rounded-2xl">
                     <Text className="text-white text-justify font-LeagueSpartan font-normal text-xl">
                       <span className="font-bold">Bill Walsh said</span> “ John
@@ -190,31 +199,32 @@ const Book: React.FC = () => {
                       a unique and impactful way”.
                     </Text>
                   </Col>
-                  <Col className="mt-2">
-                    <Row>
-                      <Text className="text-black font-LeagueSpartan font-bold text-xl ml-24">
+                  <Col className="-mt-1 flex flex-col md:mt-2">
+                    <Row className="flex flex-col order-2 md:order-1 md:-ml-40 ml-5 md:mt-0 -mt-3">
+                      <Text className="text-black font-LeagueSpartan font-bold text-2xl md:text-xl md:ml-24 text-center">
                         Bill Walsh
                       </Text>
-                      <Text className="text-black font-LeagueSpartan font-normal text-md ml-1">
+                      <Text className="text-black font-LeagueSpartan font-normal text-lg md:text-base text-center md:-ml-7">
                         America’s Small Business Expert
                       </Text>
                     </Row>
-                    <Row>
+                    <Row className="order-1 md:order-2 ml-5 md:ml-0">
                       <div className="relative">
                         <img
                           src={testimony}
                           alt="John Shin"
-                          className="lg:-mt-32 ml-40 h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover"
+                          className="lg:-mt-32 md:ml-[162px] h-[25vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover"
                         />
                       </div>
                     </Row>
                   </Col>
                 </Row>
 
-                <Row className="w-full justify-end">
+                <Row className="w-full justify-center md:mt-5 mt-10">
                   <Col>
                     <Text className="text-black font-LeagueSpartan font-bold text-xl">
-                      BOOK CONTRIBUTORS INCLUDE:
+                      BOOK <span className="text-[#ef7e45]">CONTRIBUTORS</span>{" "}
+                      INCLUDE:
                     </Text>
                   </Col>
                   <Col span={24} className="mt-4">
@@ -230,7 +240,7 @@ const Book: React.FC = () => {
                           <img
                             src={bookcontributor1}
                             alt="John Shin"
-                            className="lg: h-[10vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover mt-1.5 filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                            className="lg: h-[15vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover mt-1.5 filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
                           />
                         </div>
                       </Col>
@@ -245,7 +255,7 @@ const Book: React.FC = () => {
                           <img
                             src={bookcontributor2}
                             alt="John Shin"
-                            className="lg: h-[10vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                            className="lg: h-[15vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
                           />
                         </div>
                       </Col>
@@ -260,7 +270,7 @@ const Book: React.FC = () => {
                           <img
                             src={bookcontributor3}
                             alt="John Shin"
-                            className="lg: h-[10vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
+                            className="lg: h-[15vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]"
                           />
                         </div>
                       </Col>

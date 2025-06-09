@@ -7,13 +7,14 @@ import johnShin from "../../assets/img/aboutme/aboutmejohn.png";
 import whoIsJohnShin from "../../assets/img/johnshin/WHOISJOHNSHIN.png";
 import logo from "../../assets/img/logo/john-shin-logo.png";
 import johnShin2 from "../../assets/img/aboutme/SHINBW.png";
+import { ImageGrid } from "../../components/ui/About/image-grid";
 
 const { Text } = Typography;
 
 const About: React.FC = () => {
   return (
     <section id="about" className="min-h-screen bg-white py-20 w-full">
-      <div className="container mx-auto px-8 mt-10">
+      <div className="container mx-auto px-2 mt-10">
         <Row className="min-h-screen flex flex-col justify-start pt-5">
           <motion.div
             initial={{ opacity: 0 }}
@@ -185,7 +186,7 @@ const About: React.FC = () => {
                         viewport={{ once: true }}
                         src={logo}
                         alt="John Shin"
-                        className="ml-0 md:ml-6 mt-4 md:mt-14 relative z-0 rounded-lg h-[15vh] sm:h-[15vh] md:h-[20vh] lg:h-[10vh] object-cover"
+                        className="-mr-20 -mb-8 md:ml-6 mt-4 md:mt-14 relative z-0 rounded-lg h-[15vh] sm:h-[15vh] md:h-[20vh] lg:h-[10vh] object-cover"
                       />
                     </Col>
                   </Row>
@@ -202,7 +203,7 @@ const About: React.FC = () => {
                       <img
                         src={johnShin2}
                         alt="John Shin"
-                        className="lg:-mt-10 rounded-lg h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
+                        className="lg:-mt-10 -mt-24 rounded-lg h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[50vh] object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
                       />
                     </div>
                   </Row>
@@ -212,7 +213,7 @@ const About: React.FC = () => {
           </motion.div>
         </Row>
 
-        <Row className="min-h-screen flex flex-col justify-center pt-5">
+        <Row className="min-h-screen flex flex-col justify-center md:-mt-32">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -279,7 +280,7 @@ const About: React.FC = () => {
                     viewport={{ once: true }}
                     src={logo}
                     alt="John Shin Logo"
-                    className="lg:-mt-5 md:mt-14 rounded-lg h-[15vh] sm:h-[15vh] md:h-[20vh] lg:h-[15vh] object-contain"
+                    className="lg:-mt-5 md:mt-14 rounded-lg h-[12vh] sm:h-[15vh] md:h-[20vh] lg:h-[15vh] object-contain"
                   />
                 </motion.div>
 
@@ -290,16 +291,19 @@ const About: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   <Row className="flex-1 flex flex-col lg:-mt-10">
-                    <div className="relative flex items-center justify-center">
-                      <Text className="z-10 lg:-mr-28 text-8xl font-extrabold text-[#ef7e45] font-LeagueSpartan text-center leading-none">
-                        <span className="text-black ">JO</span>
+                    <div className="relative flex items-center justify-center -mt-10">
+                      <Text className="z-10 -mr-[4.5rem] ml-5 lg:-mr-28 lg:text-8xl md:text-8xl text-7xl font-extrabold text-[#ef7e45] font-LeagueSpartan text-center leading-none">
+                        <span className="text-black flex flex-col items-center">
+                          <span>J</span>
+                          <span>O</span>
+                        </span>
                         HN
                       </Text>
                       <div className="relative">
                         <img
                           src={johnShin}
                           alt="John Shin"
-                          className="lg:-mt-5 rounded-lg h-[30vh] sm:h-[25vh] md:h-[30vh] lg:h-[60vh] w-full object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
+                          className="lg:-mt-5 rounded-lg h-[50vh] sm:h-[25vh] md:h-[30vh] lg:h-[60vh] w-full object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
                         />
                         <div className="absolute inset-y-0 left-0 w-[30%] h-[80%] bg-white/50 rounded-l-lg" />
                       </div>
@@ -331,12 +335,23 @@ const About: React.FC = () => {
             className="mt-10"
           >
             <Col span={24} className="flex flex-col items-center mt-14">
-              <Text className="text-5xl font-semibold mb-4 text-center text-black font-lora mt-5">
+              <Text className="md:text-5xl text-3xl font-semibold mb-4 text-center text-black font-lora mt-5">
                 Testi<span className="text-[#ef7e45]">monies</span>
               </Text>
               <div className="w-full flex justify-center">
                 <MovingCards />
               </div>
+            </Col>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <Col span={24}>
+              <ImageGrid />
             </Col>
           </motion.div>
         </div>
