@@ -20,7 +20,7 @@ const Movie: React.FC = () => {
       id="movie"
       className="min-h-screen w-full py-20 bg-gradient-to-b from-white to-orange-200"
     >
-      <div className="container mx-auto  mt-10">
+      <div className="container mx-auto  mt-[5.5rem]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

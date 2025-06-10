@@ -71,7 +71,7 @@ function App() {
         },
       }}
     >
-      <Router basename="/john-shin-portfolio">
+      <Router basename="/">
         <AppContent />
       </Router>
     </ConfigProvider>
