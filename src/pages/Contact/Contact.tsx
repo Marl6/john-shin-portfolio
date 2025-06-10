@@ -82,10 +82,14 @@ const Contact: React.FC = () => {
                     onSubmit={handleSubmit}
                   >
                     <div>
-                      <label className="block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Name
                       </label>
                       <motion.input
+                        id="name"
                         type="text"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -94,16 +98,21 @@ const Contact: React.FC = () => {
                         className="mt-1 block w-full rounded-md border-[#ef7e45] shadow-sm focus:ring-[#ef7e45] focus:border-[#ef7e45] p-2 text-black"
                         placeholder="Your name"
                         name="name"
+                        autoComplete="name"
                         value={formData.name}
                         onChange={handleChange}
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Email
                       </label>
                       <motion.input
+                        id="email"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.7 }}
@@ -112,16 +121,21 @@ const Contact: React.FC = () => {
                         placeholder="you@example.com"
                         name="email"
                         type="email"
+                        autoComplete="email"
                         value={formData.email}
                         onChange={handleChange}
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Message
                       </label>
                       <motion.textarea
+                        id="message"
                         rows={4}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

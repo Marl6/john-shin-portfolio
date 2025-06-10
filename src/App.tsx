@@ -17,6 +17,7 @@ import Event from "./pages/Event/Event";
 import JSTV from "./pages/JSTV/JSTV";
 import BookMe from "./pages/BookMe/BookMe";
 import Contact from "./pages/Contact/Contact";
+import React from "react";
 
 const sectionComponents: Record<string, React.ReactNode> = {
   home: <Home />,
@@ -46,7 +47,9 @@ function AppContent() {
     <div className="relative">
       <Header />
       <main className="w-full">
-        {Object.values(sectionComponents)}
+        {Object.entries(sectionComponents).map(([key, Component]) =>
+          React.cloneElement(Component as React.ReactElement, { key })
+        )}
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
           {Object.keys(sectionComponents).map((key) => (
