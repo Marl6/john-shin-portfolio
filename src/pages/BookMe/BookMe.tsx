@@ -48,14 +48,18 @@ const BookMe: React.FC = () => {
               gutter={[32, 32]}
               className="flex items-stretch justify-center h-full"
             >
-              <Col xs={24} md={8} className="flex flex-col h-full">
+              <Col
+                xs={24}
+                md={8}
+                className="flex flex-col h-full items-center md:items-start"
+              >
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <Row className="flex-1 flex flex-col justify-start mt-[8.5rem]">
+                  <Row className="flex-1 flex flex-col justify-center mt-[8.5rem]">
                     <JohnDescription1 />
                   </Row>
                 </motion.div>
@@ -87,18 +91,18 @@ const BookMe: React.FC = () => {
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
                 >
-                  <Row className="flex-1 flex flex-row items-center justify-end mt-32">
-                    <Text className="mr-4 lg:text-7xl md:text-6xl text-5xl font-extrabold text-black font-LeagueSpartan">
+                  <Row className="flex-1 flex flex-row items-center md:justify-end justify-center md:mt-32">
+                    <Text className="mr-4 lg:text-7xl md:text-6xl text-5xl font-extrabold text-black font-LeagueSpartan text-center md:text-start">
                       HIRE <br />
                       <span className="text-[#ef7e45]">JOHN SHIN</span>
                     </Text>
                     <Text className="lg:text-7xl md:text-6xl text-5xl font-extrabold text-black font-LeagueSpartan">
                       TO SPEAK!
                     </Text>
-                    <Divider className="border-black border-[2px] flex-grow lg:-mt-1" />
+                    <Divider className="border-black border-[2px] flex-grow lg:-mt-1 mt-14" />
                   </Row>
 
-                  <Row className="flex-1 flex flex-col justify-start mt-14">
+                  <Row className="flex-1 flex flex-col justify-start mt-14 mb-10">
                     <Text className="text-lg font-light text-black font-sans text-justify leading-6 [word-spacing:0.5em]">
                       <span className="font-extrabold">John C. Shin</span> is
                       one of the most sought after and dynamic speakers of the
