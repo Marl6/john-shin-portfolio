@@ -105,7 +105,10 @@ const Movie: React.FC = () => {
               className="h-full"
             >
               <Row className="orange-200 p-6 h-[75%] md:border-r-2 lg:md:border-r-2 border-black items-center justify-center">
-                <Col span={24} className="flex justify-center -mt-24 md:-mt-0">
+                <Col
+                  span={24}
+                  className="flex justify-center -mt-24 md:-mt-0 mb-10"
+                >
                   <motion.img
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -118,7 +121,7 @@ const Movie: React.FC = () => {
                 </Col>
                 <Col
                   span={24}
-                  className="flex flex-col items-center lg:-mt-40 -mt-40"
+                  className="flex flex-col items-center lg:-mt-40 -mt-40 mb-10"
                 >
                   <motion.div
                     className="flex flex-col items-center"
@@ -175,7 +178,7 @@ const Movie: React.FC = () => {
             >
               <Row className="orange-200 p-6 h-[75%] md:border-r-2 lg:md:border-r-2 border-black items-center justify-center">
                 <Divider className="border-black border-[1px] md:border-[0px] -mb-14" />
-                <Col span={24} className="flex justify-center">
+                <Col span={24} className="flex justify-center mb-10">
                   <motion.img
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -188,7 +191,7 @@ const Movie: React.FC = () => {
                 </Col>
                 <Col
                   span={24}
-                  className="flex flex-col items-center lg:-mt-40 -mt-40"
+                  className="flex flex-col items-center lg:-mt-40 -mt-40 mb-10"
                 >
                   <motion.div
                     className="flex flex-col items-center"
@@ -245,7 +248,7 @@ const Movie: React.FC = () => {
             >
               <Row className="orange-200 p-6 h-[75%] md:border-r-2 lg:md:border-r-2 border-black items-center justify-center">
                 <Divider className="border-black border-[1px] md:border-[0px] -mb-14" />
-                <Col span={24} className="flex justify-center mt-1">
+                <Col span={24} className="flex justify-center mt-1 mb-10">
                   <motion.img
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -258,7 +261,7 @@ const Movie: React.FC = () => {
                 </Col>
                 <Col
                   span={24}
-                  className="flex flex-col items-center lg:-mt-40 -mt-40"
+                  className="flex flex-col items-center lg:-mt-40 -mt-40 mb-10"
                 >
                   <motion.div
                     className="flex flex-col items-center"
@@ -315,7 +318,7 @@ const Movie: React.FC = () => {
             >
               <Row className="orange-200 p-6 h-[75%] items-center justify-center">
                 <Divider className="border-black border-[1px] md:border-[0px] -mb-14" />
-                <Col span={24} className="flex justify-center">
+                <Col span={24} className="flex justify-center mb-10">
                   <motion.img
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -328,7 +331,7 @@ const Movie: React.FC = () => {
                 </Col>
                 <Col
                   span={24}
-                  className="flex flex-col items-center lg:-mt-40 -mt-40"
+                  className="flex flex-col items-center lg:-mt-40 -mt-40 mb-10"
                 >
                   <motion.div
                     className="flex flex-col items-center"

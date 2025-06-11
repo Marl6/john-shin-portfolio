@@ -180,7 +180,7 @@ const Home: React.FC = () => {
               <img
                 src={JohnShinNew}
                 alt="John Shin"
-                className="rounded-lg h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[75vh] object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)] ml-4 sm:ml-8 md:ml-20 lg:ml-20"
+                className="rounded-lg h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[75vh] object-cover filter drop-shadow-[20px_10px_55px_rgba(239,126,69,0.8)] md:drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)] ml-4 sm:ml-8 md:ml-20 lg:ml-20"
               />
             </motion.div>
           </Col>

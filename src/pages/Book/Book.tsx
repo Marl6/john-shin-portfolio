@@ -121,7 +121,7 @@ const Book: React.FC = () => {
                     >
                       <div className="flex items-center justify-center space-x-2">
                         <ShoppingOutlined className="text-white text-xl mb-1" />
-                        <Text className="text-white text-center font-LeagueSpartan font-bold md:text-xl text-lg">
+                        <Text className="text-white text-center font-LeagueSpartan font-bold md:text-xl text-base mt-1">
                           GET YOUR COPY TODAY!
                         </Text>
                       </div>
@@ -191,7 +191,7 @@ const Book: React.FC = () => {
                   </Row>
                 </motion.div>
 
-                <Row className="mt-8 w-full px-4 items-center md:items-start lg:items-start">
+                <Row className="mt-8 w-full items-center md:items-start lg:items-start">
                   <Col className="px-6 w-full mx-auto py-7 bg-orange-400 rounded-2xl">
                     <Text className="text-white text-justify font-LeagueSpartan font-normal text-xl">
                       <span className="font-bold">Bill Walsh said</span> “ John
@@ -200,7 +200,7 @@ const Book: React.FC = () => {
                     </Text>
                   </Col>
                   <Col className="-mt-1 flex flex-col md:mt-2">
-                    <Row className="flex flex-col order-2 md:order-1 md:-ml-40 ml-5 md:mt-0 -mt-3">
+                    <Row className="flex flex-col order-2 md:order-1 md:-ml-40 ml-8 md:mt-0 -mt-3">
                       <Text className="text-black font-LeagueSpartan font-bold text-2xl md:text-xl md:ml-24 text-center">
                         Bill Walsh
                       </Text>
@@ -208,12 +208,12 @@ const Book: React.FC = () => {
                         America’s Small Business Expert
                       </Text>
                     </Row>
-                    <Row className="order-1 md:order-2 ml-5 md:ml-0">
+                    <Row className="order-1 md:order-2 ml-8 md:ml-0">
                       <div className="relative">
                         <img
                           src={testimony}
                           alt="John Shin"
-                          className="lg:-mt-32 md:ml-[162px] h-[25vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover"
+                          className="lg:-mt-[7.5rem] md:ml-[185px] h-[25vh] sm:h-[25vh] md:h-[30vh] lg:h-[20vh] object-cover"
                         />
                       </div>
                     </Row>
@@ -221,12 +221,13 @@ const Book: React.FC = () => {
                 </Row>
 
                 <Row className="w-full justify-center md:mt-5 mt-10">
-                  <Col>
-                    <Text className="text-black font-LeagueSpartan font-bold text-xl">
+                  <Col className="flex flex-col items-center justify-center text-center">
+                    <Text className="text-black font-LeagueSpartan md:font-bold md:text-xl text-2xl font-extrabold text-center">
                       BOOK <span className="text-[#ef7e45]">CONTRIBUTORS</span>{" "}
                       INCLUDE:
                     </Text>
                   </Col>
+
                   <Col span={24} className="mt-4">
                     <Row gutter={[16, 16]} justify="space-between">
                       <Col span={7} className="text-center flex flex-col">

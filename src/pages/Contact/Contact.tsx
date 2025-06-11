@@ -55,8 +55,8 @@ const Contact: React.FC = () => {
           className="mt-14"
         >
           <Row justify="center" className="w-full">
-            <Text className="text-[#ef7e45] font-extrabold md:text-[10rem] text-[5rem] tracking-wider font-LeagueSpartan text-center">
-              CONTACT <span className="text-black">ME</span>
+            <Text className="text-[#ef7e45] font-extrabold md:text-[10rem] text-[4.5rem] tracking-wider font-LeagueSpartan text-center">
+              CONTACT <span className="block md:inline text-black">ME</span>
             </Text>
           </Row>
 
