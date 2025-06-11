@@ -17,7 +17,8 @@ const Event: React.FC = () => {
         >
           <Row>
             <Text className="mx-auto text-5xl font-semibold mb-4 text-center text-black font-lora mt-5">
-              <span className="text-[#ef7e45]">Upcoming</span> Events
+              <span className="text-[#ef7e45] mb-10 md:mb-0">Upcoming</span>{" "}
+              <span className="block md:inline mt-4 md:mt-0">Events</span>
             </Text>
           </Row>
         </motion.div>
