@@ -96,7 +96,7 @@ const Movie: React.FC = () => {
           className="flex items-stretch justify-center h-full w-full mt-14"
         >
           {/* First Column */}
-          <Col xs={24} sm={12} md={6} className="mb-4">
+          <Col xs={24} sm={12} md={6} className="mb-4 ml-8 md:ml-0">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -168,7 +168,12 @@ const Movie: React.FC = () => {
           </Col>
 
           {/* Second Column */}
-          <Col xs={24} sm={12} md={6} className="mb-4 -mt-64 md:-mt-0">
+          <Col
+            xs={24}
+            sm={12}
+            md={6}
+            className="mb-4 -mt-64 md:-mt-0  ml-8 md:ml-0"
+          >
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -238,7 +243,12 @@ const Movie: React.FC = () => {
           </Col>
 
           {/* Third Column */}
-          <Col xs={24} sm={12} md={6} className="mb-4 -mt-64 md:-mt-0">
+          <Col
+            xs={24}
+            sm={12}
+            md={6}
+            className="mb-4 -mt-64 md:-mt-0  ml-8 md:ml-0"
+          >
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -308,7 +318,7 @@ const Movie: React.FC = () => {
           </Col>
 
           {/* Fourth Column */}
-          <Col xs={24} sm={12} md={6} className="-mt-64 md:-mt-0">
+          <Col xs={24} sm={12} md={6} className="-mt-64 md:-mt-0  ml-8 md:ml-0">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
