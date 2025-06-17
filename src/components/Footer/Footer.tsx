@@ -3,7 +3,7 @@ import { Layout, Row, Col, Typography, Space } from "antd";
 import {
   FacebookOutlined,
   InstagramOutlined,
-  TwitterOutlined,
+  XOutlined,
   LinkedinOutlined,
 } from "@ant-design/icons";
 
@@ -15,7 +15,9 @@ const Footer: React.FC = () => (
     <div className="container mx-auto px-8">
       <Row align="middle" justify="space-between">
         <Col xs={24} md={12} className="text-center md:text-left mb-4 md:mb-0">
-          <Title level={5} className="text-white mb-2">John C. Shin</Title>
+          <Title level={5} className="text-white mb-2">
+            John C. Shin
+          </Title>
           <Text className="text-gray-300 text-sm block">
             {new Date().getFullYear()} All rights reserved.
           </Text>
@@ -23,7 +25,7 @@ const Footer: React.FC = () => (
         <Col xs={24} md={12} className="text-center md:text-right">
           <Space size="large">
             <a
-              href="https://facebook.com/"
+              href="https://www.facebook.com/profile.php?id=100064284123608"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -31,7 +33,7 @@ const Footer: React.FC = () => (
               <FacebookOutlined className="text-white hover:text-blue-400 text-2xl transition" />
             </a>
             <a
-              href="https://instagram.com/"
+              href="https://instagram.com/johnshinofficial/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -39,15 +41,15 @@ const Footer: React.FC = () => (
               <InstagramOutlined className="text-white hover:text-pink-400 text-2xl transition" />
             </a>
             <a
-              href="https://twitter.com/"
+              href="https://x.com/johnshinceo"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
             >
-              <TwitterOutlined className="text-white hover:text-blue-400 text-2xl transition" />
+              <XOutlined className="text-white hover:text-blue-400 text-2xl transition" />
             </a>
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/john-shin-4907b21a/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

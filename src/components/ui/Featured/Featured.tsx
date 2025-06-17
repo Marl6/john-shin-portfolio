@@ -12,19 +12,19 @@ import logo10 from "../../../assets/img/featured/10.png";
 import logo11 from "../../../assets/img/featured/11.png";
 import logo12 from "../../../assets/img/featured/12.png";
 
-const logos = [
-  logo1,
-  logo2,
-  logo3,
-  logo4,
-  logo5,
-  logo6,
-  logo7,
-  logo8,
-  logo9,
-  logo10,
-  logo11,
-  logo12,
+const logoLinks = [
+  { img: logo1, url: "https://youtube.com" },
+  { img: logo2, url: "https://youtube.com" },
+  { img: logo3, url: "https://youtube.com" },
+  { img: logo4, url: "https://youtube.com" },
+  { img: logo5, url: "https://youtube.com" },
+  { img: logo6, url: "https://youtube.com" },
+  { img: logo7, url: "https://youtube.com" },
+  { img: logo8, url: "https://youtube.com" },
+  { img: logo9, url: "https://youtube.com" },
+  { img: logo10, url: "https://youtube.com" },
+  { img: logo11, url: "https://youtube.com" },
+  { img: logo12, url: "https://youtube.com" },
 ];
 
 const Featured: React.FC = () => {
@@ -61,13 +61,15 @@ const Featured: React.FC = () => {
           start ? "animate-scroll" : ""
         } hover:[animation-play-state:paused]`}
       >
-        {logos.map((logo, index) => (
+        {logoLinks.map((logo, index) => (
           <div key={index} className="w-36 flex-shrink-0">
-            <img
-              src={logo}
-              alt={`Logo ${index + 1}`}
-              className="h-28 w-full object-contain"
-            />
+            <a href={logo.url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={logo.img}
+                alt={`Logo ${index + 1}`}
+                className="h-28 w-full object-contain cursor-pointer"
+              />
+            </a>
           </div>
         ))}
       </div>
