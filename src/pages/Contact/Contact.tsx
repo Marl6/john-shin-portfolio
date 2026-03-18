@@ -1,20 +1,22 @@
 import React from "react";
-import { Row, Col, Typography, Card } from "antd";
+import { Card, Col, Row, Typography } from "antd";
 import {
   FacebookFilled,
   InstagramOutlined,
-  XOutlined,
   LinkedinOutlined,
+  XOutlined,
 } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import johnShin from "../../assets/img/contact/contactMe.png";
 import logo from "../../assets/img/logo/john-shin-logo.png";
 
-const { Text } = Typography;
+const { Paragraph, Text, Title } = Typography;
+const CONTACT_EMAIL = "team@johncshin.com";
 
 interface FormData {
   name: string;
   email: string;
+  company: string;
   message: string;
 }
 
@@ -22,11 +24,12 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = React.useState<FormData>({
     name: "",
     email: "",
+    company: "",
     message: "",
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -37,28 +40,39 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const { name, email, message } = formData;
-    const subject = `Message from ${name}`;
-    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
-    window.location.href = `mailto:your-email@example.com?subject=${encodeURIComponent(
-      subject
+
+    const { name, email, company, message } = formData;
+    const subject = `Business Inquiry from ${name}`;
+    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ACompany: ${company}%0D%0A%0D%0AInquiry:%0D%0A${message}`;
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      subject,
     )}&body=${body}`;
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-orange-100 py-20 w-full">
-      <div className="container mx-auto px-0">
+    <section id="contact" className="w-full py-16 lg:py-24">
+      <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-14"
+          className="mt-4"
         >
-          <Row justify="center" className="w-full">
-            <Text className="text-[#ef7e45] font-extrabold md:text-[10rem] text-[4.5rem] tracking-wider font-LeagueSpartan text-center">
-              CONTACT <span className="block md:inline text-black">ME</span>
-            </Text>
+          <Row justify="center" className="mb-10 w-full">
+            <div className="mx-auto max-w-3xl text-center">
+              <Text className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent">
+                Contact
+              </Text>
+              <Title className="!mb-4 !mt-3 !font-LeagueSpartan !text-4xl !text-brand-ink sm:!text-5xl">
+                Let&apos;s discuss your business goals
+              </Title>
+              <Paragraph className="!mb-0 !text-base !text-brand-muted sm:!text-lg">
+                Reach out for speaking engagements, strategic partnerships,
+                mentorship opportunities, or media collaborations.
+              </Paragraph>
+            </div>
           </Row>
 
           <Row gutter={[16, 16]}>
@@ -69,9 +83,12 @@ const Contact: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full bg-gray-50 p-4 border border-[#ef7e45] filter drop-shadow-[0_15px_10px_rgba(0,0,0,0.3)]">
-                  <Text className="text-black font-lora text-lg text-center mb-4 block">
-                    Get in Touch with John Shin!
+                <Card className="h-full rounded-3xl border border-brand bg-brand-card p-4 shadow-sm z-10">
+                  <Text className="mb-1 block text-center font-lora text-lg text-brand-ink">
+                    Business Inquiry Form
+                  </Text>
+                  <Text className="mb-5 block text-center text-sm text-brand-muted">
+                    Response times are typically within 1-2 business days.
                   </Text>
 
                   <motion.form
@@ -85,9 +102,9 @@ const Contact: React.FC = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-brand-ink"
                       >
-                        Name
+                        Full Name
                       </label>
                       <motion.input
                         id="name"
@@ -96,8 +113,8 @@ const Contact: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.6 }}
                         viewport={{ once: true }}
-                        className="mt-1 block w-full rounded-md border-[#ef7e45] shadow-sm focus:ring-[#ef7e45] focus:border-[#ef7e45] p-2 text-black"
-                        placeholder="Your name"
+                        className="mt-1 block w-full rounded-md border border-brand bg-white p-2 text-brand-ink shadow-sm focus:border-[#d86f33] focus:ring-[#d86f33]"
+                        placeholder="Your full name"
                         name="name"
                         autoComplete="name"
                         value={formData.name}
@@ -105,12 +122,13 @@ const Contact: React.FC = () => {
                         required
                       />
                     </div>
+
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-brand-ink"
                       >
-                        Email
+                        Work Email
                       </label>
                       <motion.input
                         id="email"
@@ -118,7 +136,7 @@ const Contact: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.7 }}
                         viewport={{ once: true }}
-                        className="mt-1 block w-full rounded-md border-[#ef7e45] shadow-sm focus:ring-[#ef7e45] focus:border-[#ef7e45] p-2 text-black"
+                        className="mt-1 block w-full rounded-md border border-brand bg-white p-2 text-brand-ink shadow-sm focus:border-[#d86f33] focus:ring-[#d86f33]"
                         placeholder="you@example.com"
                         name="email"
                         type="email"
@@ -128,12 +146,34 @@ const Contact: React.FC = () => {
                         required
                       />
                     </div>
+
+                    <div>
+                      <label
+                        htmlFor="company"
+                        className="block text-sm font-medium text-brand-ink"
+                      >
+                        Company / Organization
+                      </label>
+                      <motion.input
+                        id="company"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.75 }}
+                        viewport={{ once: true }}
+                        className="mt-1 block w-full rounded-md border border-brand bg-white p-2 text-brand-ink shadow-sm focus:border-[#d86f33] focus:ring-[#d86f33]"
+                        placeholder="Company name"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                      />
+                    </div>
+
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-sm font-medium text-gray-700"
+                        className="block text-sm font-medium text-brand-ink"
                       >
-                        Message
+                        How Can We Help?
                       </label>
                       <motion.textarea
                         id="message"
@@ -142,25 +182,30 @@ const Contact: React.FC = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.8 }}
                         viewport={{ once: true }}
-                        className="mt-1 block w-full rounded-md border-[#ef7e45] shadow-sm focus:ring-[#ef7e45] focus:border-[#ef7e45] p-2 text-black"
-                        placeholder="Write your message here..."
+                        className="mt-1 block w-full rounded-md border border-brand bg-white p-2 text-brand-ink shadow-sm focus:border-[#d86f33] focus:ring-[#d86f33]"
+                        placeholder="Share your objectives, timeline, and preferred collaboration format."
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         required
                       />
                     </div>
+
                     <motion.button
                       type="submit"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.4, delay: 0.9 }}
                       viewport={{ once: true }}
-                      className="block mx-auto bg-[#ef7e45] text-white px-4 py-2 rounded-md hover:bg-[#e86f34]"
+                      className="mx-auto block rounded-full bg-brand-accent px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
                     >
-                      Send Message
+                      Submit Inquiry
                     </motion.button>
                   </motion.form>
+
+                  <Text className="mt-4 block text-center text-xs text-brand-muted">
+                    Direct email: {CONTACT_EMAIL}
+                  </Text>
                 </Card>
               </motion.div>
 
@@ -169,10 +214,10 @@ const Contact: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="items-center text-center mt-10"
+                className="mt-10 items-center text-center"
               >
-                <Text className="text-black text-xl font-bold font-Baskerville block">
-                  Follow me on my Social Medias!
+                <Text className="block text-xl font-bold font-Baskerville text-brand-ink">
+                  Follow John
                 </Text>
 
                 <Row justify="center" gutter={[16, 16]} className="mt-4">
@@ -181,7 +226,7 @@ const Contact: React.FC = () => {
                       href="https://www.facebook.com/profile.php?id=100064284123608"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-2xl text-[#1877F2] hover:text-[#ef7e45] transition-colors"
+                      className="text-2xl text-brand-ink transition-colors hover:text-brand-accent"
                       title="Facebook"
                     >
                       <motion.div
@@ -197,7 +242,7 @@ const Contact: React.FC = () => {
                       href="https://www.instagram.com/johnshinofficial/?hl=en"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-2xl text-[#E4405F] hover:text-[#ef7e45] transition-colors"
+                      className="text-2xl text-brand-ink transition-colors hover:text-brand-accent"
                       title="Instagram"
                     >
                       <motion.div
@@ -213,8 +258,8 @@ const Contact: React.FC = () => {
                       href="https://x.com/johnshinceo"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-2xl text-[#000000] hover:text-[#ef7e45] transition-colors"
-                      title="Twitter"
+                      className="text-2xl text-brand-ink transition-colors hover:text-brand-accent"
+                      title="X"
                     >
                       <motion.div
                         whileHover={{ scale: 1.1 }}
@@ -229,7 +274,7 @@ const Contact: React.FC = () => {
                       href="https://www.linkedin.com/in/john-shin-4907b21a/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-2xl text-[#000000] hover:text-[#ef7e45] transition-colors"
+                      className="text-2xl text-brand-ink transition-colors hover:text-brand-accent"
                       title="LinkedIn"
                     >
                       <motion.div
@@ -244,34 +289,35 @@ const Contact: React.FC = () => {
               </motion.div>
             </Col>
 
-            <Col xs={24} md={12} className="relative">
-              <div className="relative w-full h-full">
+            <Col xs={24} md={12} className="relative z-0">
+              <div className="relative h-full w-full">
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, delay: 0.4, type: "spring" }}
                   viewport={{ once: true }}
-                  className="absolute z-1 w-3/4 h-auto md:top-[35%] md:left-[55%] top-[16%] left-[13%] transform -translate-x-1/2 -translate-y-1/2"
+                  className="absolute left-[13%] top-[16%] z-1 h-auto w-3/4 -translate-x-1/2 -translate-y-1/2 transform md:left-[55%] md:top-[35%]"
                 >
                   <motion.img
                     src={logo}
                     alt="Logo"
-                    className="w-full h-auto"
+                    className="h-auto w-full"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300, damping: 10 }}
                   />
                 </motion.div>
+
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
                   viewport={{ once: true }}
-                  className="relative lg:-mt-64 lg:-ml-24 h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[80vh] -ml-14 sm:ml-8 md:ml-20"
+                  className="relative -ml-14 h-[40vh] sm:ml-8 sm:h-[50vh] md:ml-20 md:h-[65vh] lg:-ml-24 lg:-mt-64 lg:h-[80vh]"
                 >
                   <motion.img
                     src={johnShin}
                     alt="John Shin"
-                    className="w-full h-full object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)]"
+                    className="h-full w-full rounded-2xl border border-brand object-cover filter drop-shadow-[0_20px_25px_rgba(0,0,0,0.3)] mt-72"
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300, damping: 10 }}
                   />

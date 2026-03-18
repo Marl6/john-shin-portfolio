@@ -26,7 +26,7 @@ const useActiveSection = (sectionIds: string[], threshold: number = 0.5) => {
         
         observer.observe(element);
         observers.push(observer);
-      }
+      } 
     };
 
     // Create observers for all sections
