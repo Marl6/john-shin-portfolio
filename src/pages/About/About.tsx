@@ -8,6 +8,7 @@ import whoIsJohnShin from "../../assets/img/johnshin/WHOISJOHNSHIN.png";
 import logo from "../../assets/img/logo/john-shin-logo.png";
 import johnShin2 from "../../assets/img/aboutme/SHINBW.png";
 import { ImageGrid } from "../../components/ui/About/image-grid";
+import { FeaturedPreview } from "../../components/ui/About/featured-preview";
 
 const { Text } = Typography;
 
@@ -352,6 +353,17 @@ const About: React.FC = () => {
           >
             <Col span={24}>
               <ImageGrid />
+            </Col>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <Col span={24}>
+              <FeaturedPreview />
             </Col>
           </motion.div>
         </div>

@@ -3,7 +3,8 @@ import { Row, Col, Typography, Space } from "antd";
 import {
   FacebookOutlined,
   InstagramOutlined,
-  TwitterOutlined,
+  XOutlined,
+  LinkedinOutlined,
 } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import JohnShinNew from "../../../src/assets/img/johnshin/johnshin-new-portrait.png";
@@ -88,7 +89,7 @@ const Home: React.FC = () => {
               >
                 <Space size="large" className="mr-10 md:mr-0 lg:mr-0">
                   <motion.a
-                    href="https://facebook.com/"
+                    href="https://www.facebook.com/profile.php?id=100064284123608"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
@@ -99,7 +100,7 @@ const Home: React.FC = () => {
                     <FacebookOutlined />
                   </motion.a>
                   <motion.a
-                    href="https://instagram.com/"
+                    href="https://www.instagram.com/johnshinofficial/?hl=en"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
@@ -110,15 +111,27 @@ const Home: React.FC = () => {
                     <InstagramOutlined />
                   </motion.a>
                   <motion.a
-                    href="https://twitter.com/"
+                    href="https://x.com/johnshinceo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
-                    title="Twitter"
+                    title="X"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <TwitterOutlined />
+                    <XOutlined />
+                  </motion.a>
+
+                  <motion.a
+                    href="https://www.linkedin.com/in/john-shin-4907b21a/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
+                    title="LinkedIn"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <LinkedinOutlined />
                   </motion.a>
                 </Space>
               </motion.div>

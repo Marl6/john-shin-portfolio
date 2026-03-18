@@ -4,6 +4,7 @@ import {
   FacebookFilled,
   InstagramOutlined,
   XOutlined,
+  LinkedinOutlined,
 } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import johnShin from "../../assets/img/contact/contactMe.png";
@@ -177,7 +178,7 @@ const Contact: React.FC = () => {
                 <Row justify="center" gutter={[16, 16]} className="mt-4">
                   <Col>
                     <a
-                      href="https://facebook.com/"
+                      href="https://www.facebook.com/profile.php?id=100064284123608"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-2xl text-[#1877F2] hover:text-[#ef7e45] transition-colors"
@@ -193,7 +194,7 @@ const Contact: React.FC = () => {
                   </Col>
                   <Col>
                     <a
-                      href="https://instagram.com/"
+                      href="https://www.instagram.com/johnshinofficial/?hl=en"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-2xl text-[#E4405F] hover:text-[#ef7e45] transition-colors"
@@ -209,7 +210,7 @@ const Contact: React.FC = () => {
                   </Col>
                   <Col>
                     <a
-                      href="https://twitter.com/"
+                      href="https://x.com/johnshinceo"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-2xl text-[#000000] hover:text-[#ef7e45] transition-colors"
@@ -220,6 +221,22 @@ const Contact: React.FC = () => {
                         whileTap={{ scale: 0.9 }}
                       >
                         <XOutlined />
+                      </motion.div>
+                    </a>
+                  </Col>
+                  <Col>
+                    <a
+                      href="https://www.linkedin.com/in/john-shin-4907b21a/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-2xl text-[#000000] hover:text-[#ef7e45] transition-colors"
+                      title="LinkedIn"
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <LinkedinOutlined />
                       </motion.div>
                     </a>
                   </Col>
