@@ -3,24 +3,30 @@ import { Row, Typography } from "antd";
 import { UpcomingEvents } from "../../components/ui/Event/upcoming-events";
 import { motion } from "framer-motion";
 
-const { Text } = Typography;
+const { Text, Paragraph, Title } = Typography;
 
 const Event: React.FC = () => {
   return (
-    <section id="event" className="min-h-screen bg-white py-20 w-full">
-      <div className="container mx-auto px-8 mt-10">
+    <section id="event" className="w-full py-16 lg:py-24">
+      <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="mx-auto max-w-3xl text-center"
         >
-          <Row>
-            <Text className="mx-auto text-5xl font-semibold mb-4 text-center text-black font-lora mt-5">
-              <span className="text-[#ef7e45] mb-10 md:mb-0">Upcoming</span>{" "}
-              <span className="block md:inline mt-4 md:mt-0">Events</span>
-            </Text>
-          </Row>
+          <Text className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent">
+            Events
+          </Text>
+          <Title className="!mb-4 !mt-3 !font-LeagueSpartan !text-4xl !text-brand-ink sm:!text-5xl">
+            Signature talks and leadership experiences
+          </Title>
+          <Paragraph className="!mb-0 !text-base !text-brand-muted sm:!text-lg">
+            Programs are designed for organizations, founder communities, and
+            leadership teams seeking actionable growth strategy with measurable
+            outcomes.
+          </Paragraph>
         </motion.div>
 
         <motion.div
@@ -34,6 +40,15 @@ const Event: React.FC = () => {
             <UpcomingEvents />
           </Row>
         </motion.div>
+
+        <div className="mt-8 text-center">
+          <a
+            href="#contact"
+            className="inline-block rounded-full bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+          >
+            Request Event Details
+          </a>
+        </div>
       </div>
     </section>
   );

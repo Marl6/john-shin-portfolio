@@ -1,203 +1,150 @@
 import React from "react";
-import { Row, Col, Typography, Space } from "antd";
+import { Col, Row, Typography } from "antd";
+import { motion } from "framer-motion";
 import {
   FacebookOutlined,
   InstagramOutlined,
-  XOutlined,
   LinkedinOutlined,
+  XOutlined,
 } from "@ant-design/icons";
-import { motion } from "framer-motion";
-import JohnShinNew from "../../../src/assets/img/johnshin/johnshin-new-portrait.png";
+import JohnShinNew from "../../assets/img/johnshin/johnshin-new-portrait.png";
 import Featured from "../../components/ui/Featured/Featured";
 
-const { Text } = Typography;
+const { Title, Paragraph, Text } = Typography;
+
+const stats = [
+  { label: "Companies launched", value: "26+" },
+  { label: "States expanded into", value: "42" },
+  { label: "Lives mentored", value: "100K+" },
+];
+
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/profile.php?id=100064284123608",
+    label: "Facebook",
+    icon: <FacebookOutlined />,
+  },
+  {
+    href: "https://www.instagram.com/johnshinofficial/?hl=en",
+    label: "Instagram",
+    icon: <InstagramOutlined />,
+  },
+  {
+    href: "https://x.com/johnshinceo",
+    label: "X",
+    icon: <XOutlined />,
+  },
+  {
+    href: "https://www.linkedin.com/in/john-shin-4907b21a/",
+    label: "LinkedIn",
+    icon: <LinkedinOutlined />,
+  },
+];
 
 const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center md:bg-[#ef7e45] bg-white w-full relative overflow-hidden"
+      className="relative w-full overflow-hidden py-16 lg:py-24"
     >
-      <svg
-        className="absolute top-0 left-0 w-full h-full z-0 hidden md:block"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <path d="M35,0 C150,30 50,70 0,150 L0,0" fill="white" />
-      </svg>
-      <div className="container mx-auto px-8 z-10">
-        <Row className="md:mb-3 lg:mb-0 mt-24 md:mt-28">
-          <Text className=" text-xl md:text-3xl lg:text-3xl font-lora font-semibold text-center">
-            <span className="text-[#ef7e45]">Featured</span>{" "}
-            <span className="text-black">In</span>
-          </Text>
+      <div className="absolute left-[-16rem] top-[-10rem] h-80 w-80 rounded-full bg-brand-accent/20 blur-3xl" />
+      <div className="absolute bottom-[-8rem] right-[-10rem] h-72 w-72 rounded-full bg-amber-300/20 blur-3xl" />
 
-          <Featured />
-        </Row>
-        <Row gutter={[32, 32]} align="middle">
-          <Col
-            xs={24}
-            md={12}
-            className="order-2 md:order-1 md:mt-14 lg:mt-14 mt-3"
-          >
+      <div className="container relative z-10 mx-auto">
+        <Row gutter={[40, 40]} align="middle">
+          <Col xs={24} lg={14}>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-6 flex flex-col items-center text-center font-inter"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-center"
-              >
-                <Text className="whitespace-nowrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mt-0 text-[#ef7e45] md:ml-10 lg:ml-10 font-jacques uppercase">
-                  John C. Shin
-                </Text>
-              </motion.div>
+              <Text className="inline-flex rounded-full border border-brand bg-brand-card px-4 py-1 text-sm font-semibold text-brand-accent">
+                Entrepreneur • Investor • Philanthropist
+              </Text>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <div className="w-[250px] sm:w-[400px] md:w-[600px] h-[1px] bg-black mx-auto md:ml-8 lg:ml-8 mt-3">
-                  <div className="relative flex-grow mx-4 h-[1px]">
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-[#ef7e45] rounded-full border-2 border-white shadow-md" />
-                    <div className="absolute left-[calc(50%-1.5rem)] top-1/2 -translate-y-1/2 w-2 h-2 bg-[#ef7e45] rotate-45 border-2 border-white shadow-md" />
-                    <div className="absolute left-[calc(50%+1rem)] top-1/2 -translate-y-1/2 w-2 h-2 bg-[#ef7e45] rotate-45 border-2 border-white shadow-md" />
-                  </div>
-                </div>
-              </motion.div>
+              <Title className="!mb-4 !mt-6 !font-LeagueSpartan !text-4xl !leading-tight !text-brand-ink sm:!text-5xl lg:!text-6xl">
+                John C. Shin
+              </Title>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                <Text className="text-lg text-black font-sans md:ml-10 lg:ml-10 pt-3">
-                  Entrepreneur, Investor, Philanthropist, & Speaker
-                </Text>
-              </motion.div>
+              <Paragraph className="!mb-8 max-w-2xl !text-base !text-brand-muted sm:!text-lg">
+                Building people and businesses through strategic mentorship,
+                purpose-driven leadership, and scalable growth frameworks. John
+                partners with founders, executives, and organizations to unlock
+                performance, culture, and long-term impact.
+              </Paragraph>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="md:pt-4 lg:pt-4 justify-center ml-10 pt-4"
-              >
-                <Space size="large" className="mr-10 md:mr-0 lg:mr-0">
-                  <motion.a
-                    href="https://www.facebook.com/profile.php?id=100064284123608"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
-                    title="Facebook"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <FacebookOutlined />
-                  </motion.a>
-                  <motion.a
-                    href="https://www.instagram.com/johnshinofficial/?hl=en"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
-                    title="Instagram"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <InstagramOutlined />
-                  </motion.a>
-                  <motion.a
-                    href="https://x.com/johnshinceo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
-                    title="X"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <XOutlined />
-                  </motion.a>
-
-                  <motion.a
-                    href="https://www.linkedin.com/in/john-shin-4907b21a/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-2xl text-black hover:text-[#ef7e45] transition-colors"
-                    title="LinkedIn"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <LinkedinOutlined />
-                  </motion.a>
-                </Space>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                className="md:pt-3 lg:pt-3 flex justify-center ml-10"
-              >
-                <button
-                  type="button"
-                  onClick={() => {
-                    const element = document.getElementById("bookme");
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  className="mt-2 mr-10 md:mr-0 lg:mr-0 bg-[slate-800] no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block"
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="#bookme"
+                  className="rounded-full bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
                 >
-                  <span className="absolute inset-0 overflow-hidden rounded-full">
-                    <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  </span>
-                  <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-3 ring-1 ring-white/10">
-                    <span>Book me</span>
-                    <svg
-                      fill="none"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M10.75 8.75L14.25 12L10.75 15.25"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.5"
-                      />
-                    </svg>
-                  </div>
-                </button>
-              </motion.div>
+                  Book John To Speak
+                </a>
+                <a
+                  href="#about"
+                  className="rounded-full border border-brand px-6 py-3 text-sm font-semibold text-brand-ink transition hover:bg-brand-accent-soft"
+                >
+                  Explore Background
+                </a>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-5">
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.label}
+                    className="text-2xl text-brand-ink transition hover:text-brand-accent"
+                  >
+                    {item.icon}
+                  </a>
+                ))}
+              </div>
             </motion.div>
           </Col>
 
-          <Col
-            xs={24}
-            md={12}
-            className="flex justify-center md:justify-end order-1 md:order-2"
-          >
+          <Col xs={24} lg={10}>
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.7 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative mx-auto max-w-md"
             >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#f4c6a8] to-[#ebd8ca] blur-2xl" />
               <img
                 src={JohnShinNew}
-                alt="John Shin"
-                className="rounded-lg h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[75vh] object-cover filter drop-shadow-[20px_10px_55px_rgba(239,126,69,0.8)] md:drop-shadow-[0_20px_25px_rgba(0,0,0,0.5)] ml-4 sm:ml-8 md:ml-20 lg:ml-20"
+                alt="John Shin portrait"
+                className="relative z-10 w-full rounded-3xl border border-brand bg-brand-card object-cover p-2 shadow-xl"
               />
             </motion.div>
           </Col>
         </Row>
+
+        <Row gutter={[16, 16]} className="mt-12">
+          {stats.map((item) => (
+            <Col key={item.label} xs={24} sm={8}>
+              <div className="rounded-2xl border border-brand bg-brand-card p-6 text-center shadow-sm">
+                <p className="mb-1 text-3xl font-bold text-brand-accent">
+                  {item.value}
+                </p>
+                <p className="mb-0 text-sm font-medium text-brand-muted">
+                  {item.label}
+                </p>
+              </div>
+            </Col>
+          ))}
+        </Row>
+
+        <div className="mt-14">
+          <Text className="mb-3 block text-center text-sm font-semibold uppercase tracking-wide text-brand-muted">
+            Featured In
+          </Text>
+          <Featured />
+        </div>
       </div>
     </section>
   );

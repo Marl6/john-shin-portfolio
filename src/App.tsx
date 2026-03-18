@@ -5,7 +5,6 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
-import { ConfigProvider, theme } from "antd";
 import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -32,23 +31,32 @@ const sectionComponents: Record<string, React.ReactNode> = {
 
 function ScrollToSection() {
   const location = useLocation();
+
   useEffect(() => {
     const sectionId = location.pathname.replace("/", "") || "home";
     const el = document.getElementById(sectionId);
+
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
   }, [location]);
+
   return null;
 }
 
 function AppContent() {
   return (
-    <div className="relative">
+    <div className="relative min-h-screen bg-brand-cream text-brand-ink">
+      <a
+        href="#home"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-brand-ink focus:px-4 focus:py-2 focus:text-white"
+      >
+        Skip to content
+      </a>
       <Header />
-      <main className="w-full">
+      <main className="w-full pt-20">
         {Object.entries(sectionComponents).map(([key, Component]) =>
-          React.cloneElement(Component as React.ReactElement, { key })
+          React.cloneElement(Component as React.ReactElement, { key }),
         )}
         <Routes>
           <Route path="/" element={<Navigate to="/home" replace />} />
@@ -65,19 +73,9 @@ function AppContent() {
 
 function App() {
   return (
-    <ConfigProvider
-      theme={{
-        algorithm: theme.darkAlgorithm,
-        token: {
-          colorPrimary: "#8A2BE2",
-          colorLink: "#1E90FF",
-        },
-      }}
-    >
-      <Router basename="/">
-        <AppContent />
-      </Router>
-    </ConfigProvider>
+    <Router basename="/">
+      <AppContent />
+    </Router>
   );
 }
 

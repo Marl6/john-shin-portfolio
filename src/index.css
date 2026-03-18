@@ -10,14 +10,22 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --brand-cream: #f8f4ee;
+  --brand-card: #fffcf8;
+  --brand-ink: #1f1d1a;
+  --brand-muted: #6d655d;
+  --brand-accent: #d86f33;
+  --brand-accent-soft: #f6dcc9;
+  --brand-border: #e8d8ca;
+}
+
 @layer base {
   html {
     @apply scroll-smooth;
   }
 
     * {
-      scrollbar-width: none;
-      /* Firefox */
       -ms-overflow-style: none;
       /* Internet Explorer and Edge */
     }
@@ -28,7 +36,21 @@
     }
   
   body {
-    @apply bg-dark-background text-dark-text font-sans leading-relaxed overflow-x-hidden;
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(
+        circle at 8% 8%,
+        rgba(216, 111, 51, 0.14),
+        transparent 34%
+      ),
+      radial-gradient(
+        circle at 90% 18%,
+        rgba(166, 130, 92, 0.12),
+        transparent 32%
+      ),
+      var(--brand-cream);
+    color: var(--brand-ink);
+    line-height: 1.6;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -42,6 +64,10 @@
   a {
     @apply text-inherit no-underline;
   }
+
+  section {
+    @apply scroll-mt-24;
+  }
 }
 
 @layer components {
@@ -51,5 +77,39 @@
   
   .section {
     @apply py-12;
+  }
+}
+
+@layer utilities {
+  .bg-brand-cream {
+    background-color: var(--brand-cream);
+  }
+
+  .bg-brand-card {
+    background-color: var(--brand-card);
+  }
+
+  .text-brand-ink {
+    color: var(--brand-ink);
+  }
+
+  .text-brand-muted {
+    color: var(--brand-muted);
+  }
+
+  .text-brand-accent {
+    color: var(--brand-accent);
+  }
+
+  .border-brand {
+    border-color: var(--brand-border);
+  }
+
+  .bg-brand-accent {
+    background-color: var(--brand-accent);
+  }
+
+  .bg-brand-accent-soft {
+    background-color: var(--brand-accent-soft);
   }
 }
